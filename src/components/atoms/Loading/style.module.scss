@@ -1,0 +1,22 @@
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fafafa;
+    z-index: 9999;
+    background-image: url(../../../common/img/imgweb/page-loader.gif);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    span{
+        position: absolute;
+        position: 0;
+        top: 50%;
+        left: 48%;
+        width: 120px;
+        transform: translate(0,-50%);
+        margin-top: 50px;
+    }
+}

@@ -1,0 +1,85 @@
+@import '../../../common/scss/custom-variables';
+.title-element{
+    font-size: 16px;
+    color: #24292e;
+    position: relative;
+    font-weight: 500;
+    margin-bottom: 30px;
+    &.title-service,
+    &.title-trade-mark,
+    &.title-favourite,
+    &.title-why,
+    &.title-present,
+    &.title-create-account
+    {
+      .bg{
+            // background: url(../../img/icon/title_bg_1.png);
+            background-repeat: no-repeat;
+            background-size: 100% 42px;
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 42px;
+            padding: 0 30px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            height: 42px;
+            overflow: hidden;
+            color: #177eab;
+        }
+    }
+   &.title-trade-mark,&.title-favourite,&.title-present{
+     .bg{
+        // background-image: url(../../img/icon/title_bg_3.png);
+        color: #ffffff;
+     }
+   }
+
+    &.line-bottom{
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e5e5;
+    }
+    &.text-download{
+      color: #f7faff !important;
+    }
+     @media #{$small-and-down}{
+        &.title-element-mb{
+            display: flex;
+            justify-content: space-between;
+            background:#28b4d7;
+            align-items: center;
+            padding: 0 15px;
+            margin-bottom: 15px;
+            margin: 0 -15px;
+            color:#fff;
+            .bg{
+              color: inherit;
+            }
+        }
+        .view-all-mb{
+            font-size: 0.875rem;
+          color: #fff;
+        }
+        .bg{
+            background:none !important;
+            padding: 0 !important;
+        }
+    }
+    
+    &.line-after{
+      margin-bottom: 30px;
+      span{
+        position: relative;
+        &:before{
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            height: 2px;
+            background: #e5e5e5;
+            width: 100%;
+        }
+      }
+    }
+
+}

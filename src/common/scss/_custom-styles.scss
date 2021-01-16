@@ -1,0 +1,105 @@
+@import './custom-variables.scss';
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=vietnamese");
+// Your custom styles
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+    color: #24292e;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+a {
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  color: #12263f;
+    &:hover{
+      color:#26b4d7;
+      text-decoration:none;
+    }
+}
+.modal.fade .modal-bottom:not(.show).modal-dialog {
+  transform: translate3d(0, 25%, 0);
+}
+.modal.fade.show .modal-bottom.modal-dialog {
+  transform: none !important;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  font-size: 0.875rem;
+  color: #627792 !important;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-size: 0.875rem;
+  color: #627792 !important;
+}
+
+input::placeholder,
+select {
+  font-size: 0.875rem;
+  color: #627792 !important;
+}
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #ffffff;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #ffffff;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+::selection {
+  background: #0352cc;
+  color: #ffffff;
+}
+
+ul,ul li{
+  list-style: none;
+  padding: 0;
+}
+@media #{$medium-and-down}{
+  .container,.container-lg, .container-md, .container-sm {
+      max-width: 100%;
+  }
+}
+svg{
+  vertical-align:top;
+  width: inherit;
+  height: inherit;
+}
+button{
+  outline:none;
+  box-shadow: unset;
+  cursor: pointer;
+  &:focus,&:active{
+    outline: none !important;
+     box-shadow: unset !important;
+  }
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}

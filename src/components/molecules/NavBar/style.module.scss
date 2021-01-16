@@ -1,0 +1,65 @@
+@import '../../../common/scss/custom-variables';
+.sub-header {
+  height: 60px;
+  background-image: linear-gradient(-243deg, #025aa7, #3793ee);
+  font-size: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  .header__center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #000;
+    font-weight: 500;
+    overflow: hidden;
+    text-transform: uppercase;
+    div {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+  }
+  .header__right {
+    .text {
+      text-transform: none;
+    }
+    button{
+      padding:.375rem .75rem !important;
+    }
+  }
+  svg{
+    fill: #fff;;
+  }
+  span[class="icon"]{
+    width: 20px;
+    height: 20px;
+  }
+  
+   @media #{$medium-and-down}{
+      display: flex !important;
+  }
+}
+
+.btn-bars {
+  padding: .375rem .75rem !important;
+  > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .text-bars {
+    text-transform: capitalize;
+    font-size: 12px;
+    color:#fff;
+  }
+}
+
+

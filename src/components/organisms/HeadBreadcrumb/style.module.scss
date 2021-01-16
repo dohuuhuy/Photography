@@ -1,0 +1,12 @@
+@import '@common/scss/custom-variables';
+.head-breadcrumb{
+    background: #e9ecef;
+}
+.head-breadcrumb__item{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    .filter-mobile{
+        text-transform:capitalize;
+    }
+}

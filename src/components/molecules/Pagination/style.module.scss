@@ -1,0 +1,13 @@
+.custom-pagi {
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 0 !important;
+  li {
+    &.active {
+      a {
+        box-shadow: none !important;
+        background: #e5e5e5 !important;
+      }
+    }
+  }
+}

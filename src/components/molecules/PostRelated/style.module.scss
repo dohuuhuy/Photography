@@ -1,0 +1,15 @@
+@import '@common/scss/custom-variables';
+.grid_card {
+  display: flex;
+  align-items: stretch;
+  .content {
+    a {
+      font-family: $font;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

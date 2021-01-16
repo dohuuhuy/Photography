@@ -1,0 +1,44 @@
+// Your custom variables
+$small-screen-up: 768px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1101px !default;
+$small-screen: 767px !default;
+$medium-screen: 992px !default;
+$large-screen: 1100px !default;
+$medium-and-up: 'only screen and (min-width : #{$small-screen-up})' !default;
+$large-and-up: 'only screen and (min-width : #{$medium-screen-up})' !default;
+$small-and-down: 'only screen and (max-width : #{$small-screen})' !default;
+$medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
+$medium-only: 'only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})' !default;
+$sidenav-logo-wrapper-medium-img-height: 60px !default;
+$font: 'Arial', serif;
+$font2: "Playfair Display",Arial, serif;
+$font3: "Roboto",Arial,serif;
+// $size-grid-unit: 0.5rem;
+// Color Themes - Variables 
+$border-color:#e5e5e5;
+// font-weight
+$font_weight_light: 300;
+$font_weight_normal: 400;
+$font_weight_bold: 500;
+$font_weight_bolder: 700;
+
+//Shadow - Variables
+$boxShadowColor: rgba(58, 58, 58, 0.1);
+$boxShadow: 0px -1px 2px $boxShadowColor, 1px 1px 2px $boxShadowColor;
+$shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+$shadown_so: 0 4px 8px rgba(59, 64, 69, 0.2);
+
+// default backgroundColor
+
+$default-color: #2bbbad !default;
+$primary-color: #00c2ff !default;
+$secondary-color: #bb9a37 !default;
+$info-color: #33b5e5 !default;
+$success-color: #00c851 !default;
+$warning-color: #ffbb33 !default;
+$danger-color: #ff3547 !default;
+
+$button_background: #0352cc;
+$button_color: #ffffff;
+

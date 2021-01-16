@@ -1,0 +1,38 @@
+.link-view-all{
+  cursor: pointer;
+    display: inline-block;
+    text-transform: none;
+    white-space: nowrap;
+    padding: 5px 50px;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-weight: 400;
+    letter-spacing: 0;
+    border-width: 0 !important;
+    border-radius: 14px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.18) !important;
+    position: relative;
+    transition: all 0.25s ease;
+    color: #000;
+    background-color: #fbfcfd;
+    &:hover{
+       background-color: #ed3a68;
+        color: #ffffff;
+        -webkit-transform: translate(0px,3px);
+        -ms-transform: translate(0px,3px);
+        transform: translate(0px,3px);
+        border-bottom: 3px solid transparent !important;
+    }
+    &.trade{
+      background-color: #ff424e;
+      color:#fff;
+    }
+    &.hot{
+      background-color: #ffcc00;
+    }
+     @media #{$small-and-down}{
+       background: #28b4d7 !important;
+       color:#fff;
+       padding: 2px 30px;
+     }  
+}

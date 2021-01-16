@@ -1,0 +1,110 @@
+@import '../../../common/scss/custom-variables';
+.modal.fade .modal-bottom:not(.show).modal-dialog {
+  transform: translate3d(0, 25%, 0);
+}
+.modal.fade.show .modal-bottom.modal-dialog {
+  transform: none !important;
+}
+// modal size
+.custom-modal-size{
+    top: 20% !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    left: 0;
+    .modal-header{
+        padding: 10px;
+    }
+    .body{
+        padding: 0;
+    }
+    .modal-footer{
+        button{
+            min-width: 150px;
+        }
+    }
+   
+    @media #{$medium-and-down}{
+        top: auto !important;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        .modal-footer{
+            padding: 0;
+            border:0;
+            button{
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    }
+}
+.full_height {
+  height: calc(100% - 60px);
+  > div {
+    background-color: #ffffff;
+    height: 100%;
+  }
+  .title_popup {
+    border: 0;
+    padding: 15px;
+    h4 {
+      color: #0352cc;
+      font-size: 1.4rem !important;
+    }
+    button {
+      color: #5274a0;
+      opacity: 0.6;
+    }
+  }
+  .body {
+    padding-top: 0;
+    max-height: 75vh;
+    overflow: auto;
+  }
+}
+
+
+.bottom {
+  min-height: 0 !important;
+  top: auto !important;
+  display: block;
+  max-width: 100%;
+  bottom: 0;
+  margin: 0 !important;
+  position: absolute !important;
+  left: 0px;
+  right:0px;
+  bottom: 0px;
+  > div {
+    padding: 15px 15px 0 15px;
+  }
+  .title_popup {
+    border: 0;
+    font-size: 0.875rem;
+    padding: 0 0 10px 0;
+    h4 {
+      font-size: 1.125rem;
+      color: #0352cc;
+      font-weight: 500;
+    }
+    button {
+      color: #5274a0;
+      opacity: 1;
+    }
+   
+  }
+  .body {
+    padding: 0 0 0 0;
+  }
+  .modal_footer {
+   border-top: 3px solid #dfe3eb;
+    padding: 10px 0;
+    button{
+        min-width: 110px;
+        margin: 0 0 0 10px !important;
+        &.cancel{
+            background: #dfe3eb;
+        }
+    }
+  }
+}

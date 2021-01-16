@@ -1,0 +1,358 @@
+// Progress
+.md-progress {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: $progress-height-mdb;
+  margin-bottom: $progress-margin-bottom;
+  overflow: hidden;
+  background-color: #eee;
+  box-shadow: none;
+  .progress-bar {
+    height: $progress-bar-height;
+    background-color: $primary-color-dark;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .progress-bar-animated {
+    transition: $progress-bar-animated-transition;
+  }
+  .indeterminate {
+    background-color: $blue-lighten-3;
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background-color: inherit;
+      // Custom bezier
+      animation: $progress-indeterminate-before-animation;
+      will-change: left, right;
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background-color: inherit;
+      // Custom bezier
+      animation: $progress-indeterminate-after-animation;
+      animation-delay: $progress-indeterminate-after-animation-delay;
+      will-change: left, right;
+    }
+  }
+  @include keyframes(indeterminate) {
+    0% {
+      right: 100%;
+      left: -35%;
+    }
+    60% {
+      right: -90%;
+      left: 100%;
+    }
+    100% {
+      right: -90%;
+      left: 100%;
+    }
+  }
+  @include keyframes(indeterminate-short) {
+    0% {
+      right: 100%;
+      left: -200%;
+    }
+    60% {
+      right: -8%;
+      left: 107%;
+    }
+    100% {
+      right: -8%;
+      left: 107%;
+    }
+  }
+}
+
+.preloader-wrapper {
+  position: relative;
+  display: inline-block;
+  width: $progress-preloader-width;
+  height: $progress-preloader-height;
+  font-size: 0;
+  &.small {
+    width: $progress-preloader-small-width;
+    height: $progress-preloader-small-height;
+  }
+  &.big {
+    width: $progress-preloader-big-width;
+    height: $progress-preloader-big-height;
+  }
+  &.active {
+    animation: $progress-preloader-active-animation;
+  }
+  &.crazy{
+    animation-duration: $progress-preloader-crazy-animation;
+  }
+  .spinner-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    .gap-patch {
+      position: absolute;
+      top: 0;
+      left: $progress-spinner-gap-left;
+      width: $progress-spinner-gap-width;
+      height: 100%;
+      overflow: hidden;
+      border-color: inherit;
+      .circle {
+        left: $progress-spinner-gap-circle-left;
+        width: $progress-spinner-gap-circle-width;
+      }
+    }
+
+    .circle-clipper {
+      position: relative;
+      display: inline-block;
+      width: $progress-spinner-circle-clipper-width;
+      height: 100%;
+      overflow: hidden;
+      border-color: inherit;
+      .circle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: $progress-spinner-circle-clipper-circle-width;
+        height: 100%;
+        border-color: inherit;
+
+        /* STROKEWIDTH */
+        border-style: solid;
+        border-width: $progress-spinner-circle-clipper-circle-border-width;
+        border-bottom-color: transparent !important;
+        border-radius: $progress-spinner-circle-clipper-circle-border-radius;
+        animation: none;
+      }
+      &.left .circle {
+        left: 0;
+        border-right-color: transparent !important;
+        transform: $progress-spinner-circle-clipper-left-circle-transform;
+      }
+      &.right .circle {
+        left: $progress-spinner-circle-clipper-right-circle-left;
+        border-left-color: transparent !important;
+        transform: $progress-spinner-circle-clipper-right-circle-transform;
+      }
+    }
+
+  }
+  .spinner-blue,
+  .spinner-blue-only {
+    border-color: $primary-color;
+  }
+
+  .spinner-red,
+  .spinner-red-only {
+    border-color: #db4437;
+  }
+
+  .spinner-yellow,
+  .spinner-yellow-only {
+    border-color: #f4b400;
+  }
+
+  .spinner-green,
+  .spinner-green-only {
+    border-color: #0f9d58;
+  }
+}
+
+@include keyframes(container-rotate){
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.active {
+  .spinner-layer {
+    &.spinner-blue {
+      @include progress-animation-default($progress-active-spinner-main, $progress-active-spinner-blue);
+    }
+    &.spinner-red {
+      @include progress-animation-default($progress-active-spinner-main, $progress-active-spinner-red);
+    }
+    &.spinner-yellow {
+      @include progress-animation-default($progress-active-spinner-main, $progress-active-spinner-yellow);
+    }
+    &.spinner-green {
+      @include progress-animation-default($progress-active-spinner-main, $progress-active-spinner-green);
+    }
+    &.spinner-blue-only,
+    &.spinner-red-only,
+    &.spinner-yellow-only,
+    &.spinner-green-only,
+    &.spinner-primary-color-only {
+      opacity: 1;
+      @include progress-animation-default($progress-active-spinner-main);
+    }
+  }
+  .circle-clipper.left .circle {
+    animation: $progress-active-circle-left-spin;
+  }
+  .circle-clipper.right .circle {
+    animation: $progress-active-circle-right-spin;
+  }
+}
+
+@include keyframes(fill-unfill-rotate){
+  12.5% {
+    transform: rotate(135deg);
+  }
+  25% {
+    transform: rotate(270deg);
+  }
+  37.5% {
+    transform: rotate(405deg);
+  }
+  50% {
+    transform: rotate(540deg);
+  }
+  62.5% {
+    transform: rotate(675deg);
+  }
+  75% {
+    transform: rotate(810deg);
+  }
+  87.5% {
+    transform: rotate(945deg);
+  }
+  to {
+    transform: rotate(1080deg);
+  }
+}
+
+@include keyframes(blue-fade-in-out) {
+  from {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 0;
+  }
+  89% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(red-fade-in-out) {
+  from {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+}
+
+@include keyframes (yellow-fade-in-out) {
+  from {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 0;
+  }
+}
+
+@include keyframes (green-fade-in-out) {
+  from {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes(left-spin) {
+  from {
+    transform: rotate(130deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(130deg);
+  }
+}
+
+@include keyframes(right-spin) {
+  from {
+    transform: rotate(-130deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-130deg);
+  }
+}
+
+#spinnerContainer.cooldown {
+  @include progress-animation-default($progress-spinner-container-animation-rotate, $progress-spinner-container-animation-fade);
+}
+
+@include keyframes(fade-out){
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+#mdb-preloader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9998;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+}

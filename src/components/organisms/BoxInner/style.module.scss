@@ -1,0 +1,9 @@
+.box-inner{
+    position: relative;
+    &.inner-user{
+        .title-element{
+            font-size:1.3rem;
+            margin-bottom: 15px;
+        }
+    }
+}

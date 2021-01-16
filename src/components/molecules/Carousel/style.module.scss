@@ -1,0 +1,75 @@
+@import '@common/scss/custom-variables';
+.head_banner{
+  font-family: $font2;
+  font-weight:700 !important;
+}
+.head_description{
+  color:#000 !important;
+  font-weight:400 !important;
+}
+.thumb {
+  ol {
+    bottom: 15px;
+    margin: 0;
+    z-index: 2;
+  }
+  .inner-img {
+    background: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 10px;
+  }
+  &.slide-carosel-desktop {
+    img {
+      height: 500px;
+      object-fit: cover;
+      @media #{$small-and-down} {
+        height: 300px;
+      }
+    }
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.content {
+  z-index: 1;
+  position: absolute;
+  top: 35%;
+  width: 500px;
+  // left: 20%;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+  transform: translate(0, -35%);
+  @media #{$small-and-down} {
+    width: 90%;
+    // left: 15px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  h3 {
+    font-weight: 700;
+    animation: fadeInDown 0.7s ease;
+  }
+  p {
+    margin-bottom: 5%;
+    animation: fadeInDown 0.7s ease;
+    font-weight: 500;
+  }
+  .viewmore {
+    // background-color: #1570b5;
+    color: #ffffff;
+    // padding: 10px 15px;
+    animation: fadeInDown 0.7s ease;
+  }
+}

@@ -1,0 +1,81 @@
+@import '@common/scss/custom-variables';
+.hospital_hot{
+  background: #edf6ff;
+  padding: 15px;
+  display: flex;
+ 
+  .hospital_hot-img{
+    min-width: 200px;
+    margin-right: 15px;
+    max-width: 255px;
+    
+  }
+  .hospital_info{
+    h2{
+      font-size:1.5rem;
+      font-family: $font2;
+      font-weight:700;
+    }
+  }
+   @media(max-width: 480px){
+      flex-direction: column;
+      align-items: center;
+      .hospital_hot-img{
+        margin: 0;
+      }
+      .hospital_info h2{
+        margin-top:10px;
+      }
+      .dc-btn{
+        button{
+          width: 100%;
+        }
+      }
+    }
+}
+.dc-btn{
+ 
+    button{
+       display: block;
+    width: 200px;
+    margin: 10px 0;
+    padding:12px 15px !important;
+      background: #2196F3 !important;
+    }
+}
+.dc-description {
+  text-align: justify;
+  p {
+    text-align: justify;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.dc-docinfo {
+  li {
+    padding: 5px 0;
+  }
+}
+
+.sigle_tags {
+  margin-bottom:0;
+  li {
+    margin: 5px 5px;
+     color: #000;
+      background-color: #fff;
+      padding: 3px 5px;
+      font-size: 12px;
+      border-radius: 3px;
+      font-weight:500;
+
+    &:first-child {
+      font-weight: bolder;
+      color: #2957a4;
+    }
+  }
+}
