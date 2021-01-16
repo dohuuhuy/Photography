@@ -1,9 +1,0 @@
-@import '../../../common/scss/custom-variables';
-.box-left{
-    overflow-x: hidden;
-    margin-top: 20px;
-    @media #{$medium-and-down}{
-        width: 100%;
-        margin-top: 15px;
-    }
-}

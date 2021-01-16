@@ -1,9 +1,0 @@
-@import '../../../common/scss/custom-variables';
-.box-section{
-   position: relative;
-   overflow: hidden;
-   padding: 38px 0;
-   @media #{$small-and-down}{
-      padding:18px 0;
-   }
-}
