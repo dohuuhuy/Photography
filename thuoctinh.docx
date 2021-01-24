@@ -1,0 +1,53 @@
+
+
+[List-Doctor] <Danh sách bác sĩ>
+
+image		<image> : hình ảnh
+doctorName	<string>: tên bác sĩ
+sex		<bool>	: giới tính
+degree		<string>: học vị
+Specialist	<string>: chuyên khoa
+workingDay	<array>	: các ngày làm việc
+workingStatus	<bool>	: trạng thái ngày làm việc 
+votes		<number>: bình chọn
+favourite	<bool>	: yêu thích 
+
+
+[List-Hospital] <Danh sách bệnh viện>
+
+image		<image> : hình ảnh
+hospitalName	<string>: tên bệnh viện
+description	<string>: mô tả
+comment		<string>: nhận xét
+hospitalRank	<string>: tên thứ hạng
+Specialist	<string>: chuyên khoa
+rating		<number>: đánh giá
+hospitalAddress <string>: địa chỉ bệnh viện
+workingDay	<array>	: các ngày làm việc
+votes		<number>: bình chọn
+favourite	<bool>	: yêu thích
+
+
+[blog-list]
+
+image
+tagName
+publicDate
+votes		<number>: bình chọn
+views
+
+
+
+
+------------------
+menu 
+
+- label
+- item
+
+@10ngontaY
+
+
+
+
+

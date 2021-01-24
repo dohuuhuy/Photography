@@ -1,21 +1,20 @@
-import { menuActionTypes } from './menu.action'
-
+import { GET_MENU } from '../types';
 const initialState = {
-  menu: {},
-  loading: false,
+    menu: {},
+
 }
 
-export default function menuReducer(
-  state = initialState,
-  { type, payload }: any
-) {
-  switch (type) {
-    case menuActionTypes.GET_MENU:
-      return {
-        menu: payload,
-      }
+export default function postReducer(state = initialState, { type, payload }: any) {
+    switch (type) {
 
-    default:
-      return state
-  }
+        case GET_MENU:
+            return {
+                ...state,
+                menu: payload,
+
+            }
+
+        default:
+            return state
+    }
 }

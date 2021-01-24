@@ -1,25 +1,23 @@
-import { postActionTypes } from './post.action'
+import { GET_POST } from '../types';
 const initialState = {
-  posts: [],
-  post: {},
-  loading: false,
-  error: null,
+    posts: [],
+    post: {},
+    loading: false,
+    error: null
 }
 
-export default function postReducer(
-  state = initialState,
-  { type, payload }: any
-) {
-  switch (type) {
-    case postActionTypes.GET_POST:
-      return {
-        ...state,
-        posts: payload,
-        loading: false,
-        error: null,
-      }
+export default function postReducer(state = initialState, { type, payload }: any) {
+    switch (type) {
 
-    default:
-      return state
-  }
+        case GET_POST:
+            return {
+                ...state,
+                posts: payload,
+                loading: false,
+                error: null
+            }
+
+        default:
+            return state
+    }
 }

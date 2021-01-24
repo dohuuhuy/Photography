@@ -1,22 +1,18 @@
-import React from 'react'
-import { AppProps, Container } from 'next/app'
-import { wrapper } from '@store/store'
-// begin mdreact
+import { wrapper } from '@store/index'
+import Layout from '@template/index'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'bootstrap-css-only/css/bootstrap.min.css'
-import '@common/scss/mdb.scss'
-// end mdreact
-import { useDispatch } from 'react-redux'
-import { fetchMenu } from '@store/menu/menu.action'
+import 'mdbreact/dist/css/mdb.css'
 
-const CustomApp = ({ Component, pageProps }: AppProps) => {
-  const dispatch = useDispatch()
-  dispatch(fetchMenu())
+import { AppProps } from 'next/app'
+import React from 'react'
 
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <Container>
+    <Layout>
       <Component {...pageProps} />
-    </Container>
+    </Layout>
   )
 }
 
-export default wrapper.withRedux(CustomApp)
+export default wrapper.withRedux(MyApp)

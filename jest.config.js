@@ -1,16 +1,17 @@
-const TEST_REGEX = '(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|jsx?|tsx?|ts?)$'
-
 module.exports = {
-  setupFiles: ['<rootDir>/jest.setup.js'],
-  testRegex: TEST_REGEX,
+  roots: ['<rootDir>'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
+  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
+  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   transform: {
-    '^.+\\.tsx?$': 'babel-jest',
-    '^.+\\.svg$': 'jest-svg-transformer',
+    '^.+\\.(ts|tsx)$': 'babel-jest',
   },
-  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  collectCoverage: false,
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
   moduleNameMapper: {
-    '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
   },
 }

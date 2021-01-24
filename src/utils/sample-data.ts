@@ -1,27 +1,6 @@
 import { User } from '../interfaces'
 
 /** Dummy user data. */
-
-export const array_shareprofile = [
-  {
-    iconName: 'facebook',
-    classNameShare: 'dc-facebook',
-    hrefShare: '#!',
-  },
-  {
-    iconName: 'google',
-    classNameShare: 'dc-google',
-    hrefShare: '#!',
-  },
-  {
-    iconName: 'zalo',
-    classNameShare: 'dc-zalo',
-    hrefShare: '#!',
-  },
-]
-
-
-
 export const sampleUserData: User[] = [
   { id: 101, name: 'Alice' },
   { id: 102, name: 'Bob' },

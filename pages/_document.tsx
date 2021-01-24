@@ -1,9 +1,9 @@
 import Document, {
-  DocumentContext,
-  Head,
   Html,
+  Head,
   Main,
   NextScript,
+  DocumentContext,
 } from 'next/document'
 const sprite = require('svg-sprite-loader/runtime/sprite.build')
 
@@ -22,7 +22,7 @@ export default class CustomDocument extends Document<{
 
   public render() {
     return (
-      <Html lang="vi">
+      <Html>
         <Head>{/* your head if needed */}</Head>
         <body>
           <div dangerouslySetInnerHTML={{ __html: this.props.spriteContent }} />

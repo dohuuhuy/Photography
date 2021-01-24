@@ -6,10 +6,10 @@
     height: $carousel-control-icon-height;
   }
   .carousel-control-prev-icon {
-    background-image: url('/images/arrow_left.svg');
+    background-image: $carousel-control-prev-icon;
   }
   .carousel-control-next-icon {
-    background-image: url('/images/arrow_right.svg');
+    background-image: $carousel-control-next-icon;
   }
   .carousel-indicators {
     li {

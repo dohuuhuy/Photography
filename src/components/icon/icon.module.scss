@@ -1,9 +1,11 @@
-//  @import '../../common/scss/custom-variables';
-$size-grid-unit: 10px;
+$size-grid-unit: 0.5rem;
+
 $size-icon: $size-grid-unit * 2;
+
 .icon {
   vertical-align: middle;
   display: inline-block;
+
   &--small {
     width: $size-icon;
     height: $size-icon;

@@ -1,7 +1,7 @@
-const path = require('path')
-const postcssPresetEnv = require('postcss-preset-env')
-const withPugins = require('next-compose-plugins')
 const withImages = require('next-images')
+const path = require('path')
+const withPugins = require('next-compose-plugins')
+const postcssPresetEnv = require('postcss-preset-env')
 const postcssPresetEnvOptions = {
   features: {
     'custom-media-queries': true,
@@ -14,45 +14,17 @@ const cssOptions = {
     plugins: [postcssPresetEnv(postcssPresetEnvOptions)],
   },
   sassOptions: {
-    includePaths: [path.join(process.cwd(), 'src', 'common', 'scss')],
+    includePaths: [path.join(process.cwd(), 'src', 'common', 'css')],
   },
 }
 
 const nextConfig = {
   ...cssOptions,
   env: {
-    api: 'https://cms.medpro.com.vn',
+    api: 'http://45.119.213.86:3337/',
   },
-  images: {
-    loader: 'default',
-    domains: ['cms.medpro.com.vn'],
-  },
-  exclude: path.join(process.cwd(), 'src', 'components', 'icon', 'icons'),
+
   webpack(config) {
-    config.module.rules.push({
-      test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/,
-      include: path.join(process.cwd(), 'src', 'components', 'icon', 'icons'),
-      use: {
-        loader: 'url-loader',
-        options: {
-          limit: 100000,
-          name: '[name].[ext]',
-          esModule: false,
-        },
-      },
-    })
-    config.module.rules.push({
-      test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/i,
-      include: path.join(process.cwd(), 'src', 'components', 'icon', 'icons'),
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            esModule: false,
-          },
-        },
-      ],
-    })
     config.module.rules.push({
       test: /\.svg$/,
       include: path.join(process.cwd(), 'src', 'components', 'icon', 'icons'),
@@ -61,7 +33,12 @@ const nextConfig = {
         {
           loader: 'svgo-loader',
           options: {
-            plugins: [{ removeTitle: true }, { cleanupIDs: true }],
+            plugins: [
+              { removeAttrs: { attrs: '(fill)' } },
+              { removeTitle: true },
+              { cleanupIDs: true },
+              { removeStyleElement: true },
+            ],
           },
         },
       ],
@@ -69,16 +46,5 @@ const nextConfig = {
     return config
   },
 }
-
-const plugins = [
-  withImages,
-  {
-    images: {
-      // deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-      // loader: 'default',
-      domains: ['cms.medpro.com.vn'],
-    },
-  },
-]
-
+const plugins = [withImages]
 module.exports = withPugins(plugins, nextConfig)

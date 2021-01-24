@@ -23,8 +23,8 @@
       "@containers/*": ["./src/containers/*"],
       "@common/*": ["./src/common/*"],
       "@store/*": ["./src/store/*"],
-      "@templates/*": ["./src/templates/*"],
-      "@icons/*": ["./src/components/icon/icons/*"]
+      "@template/*": ["./src/template/*"],
+      "@public": ["./public/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -42,7 +42,18 @@
     "**/*.spec.tsx",
     "**/*.test.ts",
     "**/*.test.tsx",
+    "**/*.spec.js",
+    "**/*.spec.jsx",
+    "**/*.test.js",
+    "**/*.test.jsx",
     "coverage"
   ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/demo.tsx"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "lib/gtag.js"
+  ]
 }

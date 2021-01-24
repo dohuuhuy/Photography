@@ -12,8 +12,11 @@
               "@containers": "./src/containers",
               "@common": "./src/common",
               "@store": "./src/store",
-              "@templates": "./src/templates",
-              "@icons": "./src/components/icon/icons"
+              "@moxy": "/node_modules/@moxy/",
+              "@antd": "/node_modules/antd/",
+              "@styles": "./public/assets/styles",
+              "@template": "./src/template",
+              "@public": "./public/"
             }
           }
         ]
@@ -31,34 +34,9 @@
               "@containers": "./src/containers",
               "@common": "./src/common",
               "@store": "./src/store",
-              "@templates": "./src/templates",
-              "@icons": "./src/components/icon/icons"
-            }
-          }
-        ]
-      ]
-    },
-    "test": {
-      "presets": [
-        [
-          "next/babel",
-          {
-            "preset-env": {
-              "modules": "commonjs"
-            }
-          }
-        ]
-      ],
-      "plugins": [
-        [
-          "module-resolver",
-          {
-            "root": ["./"],
-            "alias": {
-              "@components": "./src/components",
-              "@containers": "./src/containers",
-              "@common": "./src/common",
-              "@store": "./src/store"
+              "@antd": "/node_modules/antd/",
+              "@styles": "./public/assets/styles",
+              "@template": "./src/template"
             }
           }
         ]
