@@ -1,168 +1,209 @@
 import {
-  MDBCollapse,
+  MDBBtn,
+  MDBCard,
+  MDBCol,
   MDBContainer,
-  MDBDropdown,
-  MDBDropdownItem,
-  MDBDropdownMenu,
-  MDBDropdownToggle,
-  MDBFormInline,
   MDBIcon,
+  MDBInputGroup,
+  MDBModal,
+  MDBModalBody,
+  MDBModalFooter,
+  MDBModalHeader,
   MDBNavbar,
   MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavbarToggler,
-  MDBNavItem,
+  MDBRow,
 } from 'mdbreact'
 import Link from 'next/link'
-import { Router } from 'next/router'
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-const Header = () => {
+
+const hamburgerMenuPage = () => {
   const [isOpen, setisOpen] = useState(false)
-  const toggleCollapse = () => {
+  const toggle = () => {
     setisOpen(!isOpen)
   }
-  Router.events.on('routeChangeStart', () => {
-    setisOpen(false)
-  })
-  const { menu } = useSelector((state: { menu: any }) => state.menu)
-  const { navigation } = menu
-  // console.log('navigation :>> ', navigation)
+
   return (
     <>
-      <MDBNavbar color="blue" dark expand="md" fixed="top" scrolling>
-        <MDBContainer>
-          <MDBNavbarToggler onClick={toggleCollapse} />
-          <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
-            <MDBNavbarNav left>
-              {navigation &&
-                navigation.map(
-                  (
-                    {
-                      label: cate_label,
-                      slug: cate_slug,
-                      navSubItem,
-                      typeLink,
-                    }: any,
-                    i: number,
-                  ) => {
-                    const TypeLink = () => {
-                      switch (typeLink) {
-                        case 'page':
-                          return (
-                            <Link
-                              href={{
-                                pathname: `/${cate_slug}`,
-                                query: {
-                                  breadcrumb_cate: [
-                                    cate_label,
-                                    cate_slug,
-                                    typeLink,
-                                  ],
-                                },
-                              }}
-                              as={`/${cate_slug}`}
-                            >
-                              <a className="nav-link">{cate_label}</a>
-                            </Link>
-                          )
-                        case 'post':
-                          return (
-                            <Link
-                              href={{
-                                pathname: '/[cate]/[subcate]/[post]',
-                                query: {
-                                  cate: 'null',
-                                  subcate: 'null',
-                                  post: cate_slug,
-                                  breadcrumb_cate: [
-                                    cate_label,
-                                    cate_slug,
-                                    typeLink,
-                                  ],
-                                },
-                              }}
-                              as={`/${cate_slug}`}
-                            >
-                              <a className="nav-link">{cate_label}</a>
-                            </Link>
-                          )
-                        default:
-                          return (
-                            <Link
-                              href={{
-                                pathname: '/[cate]',
-                                query: {
-                                  cate: cate_slug,
-                                  breadcrumb_cate: [cate_label, cate_slug],
-                                },
-                              }}
-                              as={`/${cate_slug}`}
-                            >
-                              <a className="nav-link">{cate_label}</a>
-                            </Link>
-                          )
+      <MDBNavbar
+        style={{ marginTop: '20px', boxShadow: 'none' }}
+        light
+        fixed="top"
+        scrolling
+      >
+        <MDBContainer className={'p-0'}>
+          <MDBNavbarBrand>
+            <p className="text-warning text-uppercase font-weight-bold">
+              Designer UI/UX
+            </p>
+          </MDBNavbarBrand>
+          <MDBBtn
+            className="m-0"
+            color="orange"
+            size="sm"
+            onClick={() => toggle()}
+          >
+            <MDBIcon size="2x" icon="home" />
+          </MDBBtn>
+          <MDBModal
+            isOpen={isOpen}
+            toggle={() => toggle()}
+            fullHeight
+            position="right"
+          >
+            <MDBModalHeader toggle={() => toggle()}>Menu</MDBModalHeader>
+            <MDBModalBody>
+              <MDBContainer>
+                <MDBRow center>
+                  <MDBCol md="11">
+                    <MDBInputGroup
+                      hint="Find ..."
+                      containerClassName="mb-3"
+                      append={
+                        <MDBBtn
+                          color="yellow"
+                          className="m-0 px-3 py-2 z-depth-0"
+                        >
+                          <MDBIcon size="1x" icon="search" />
+                        </MDBBtn>
                       }
-                    }
-
-                    return !navSubItem.length ? (
-                      <MDBNavItem key={i}>{TypeLink()}</MDBNavItem>
-                    ) : (
-                      <MDBNavItem key={i}>
-                        <MDBDropdown>
-                          <MDBDropdownToggle nav caret>
-                            <span className="mr-2">{cate_label}</span>
-                          </MDBDropdownToggle>
-
-                          <MDBDropdownMenu className="dropdown-default">
-                            {navSubItem &&
-                              navSubItem.map(
-                                (
-                                  {
-                                    label: subCate_label,
-                                    slug: subCate_slug,
-                                  }: any,
-                                  i: number,
-                                ) => {
-                                  return (
-                                    <Link
-                                      key={i}
-                                      href={{
-                                        pathname: '/[cate]/[subcate]',
-                                        query: {
-                                          cate: cate_slug,
-                                          subcate: subCate_slug,
-                                          breadcrumb_cate: [
-                                            cate_label,
-                                            cate_slug,
-                                          ],
-                                          breadcrumb_subCate: [
-                                            subCate_label,
-                                            subCate_slug,
-                                          ],
-                                        },
-                                      }}
-                                      as={`/${cate_slug}/${subCate_slug}`}
-                                    >
-                                      <MDBDropdownItem>
-                                        {subCate_label}
-                                      </MDBDropdownItem>
-                                    </Link>
-                                  )
-                                },
-                              )}
-                          </MDBDropdownMenu>
-                        </MDBDropdown>
-                      </MDBNavItem>
-                    )
-                  },
-                )}
-            </MDBNavbarNav>
-          </MDBCollapse>
+                    />
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                  <MDBCol md="12">
+                    <ul className="nav flex-column ">
+                      <li className="nav-item">
+                        <Link href="/">
+                          <a className="nav-link">Home</a>
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/">
+                          <a className="nav-link">Work</a>
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/">
+                          <a className="nav-link">Blog</a>
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/about">
+                          <a className="nav-link">About</a>
+                        </Link>
+                      </li>
+                    </ul>
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                  <MDBCol>
+                    <section className="text-center my-5">
+                      <h2 className="h1-responsive font-weight-bold text-center my-5">
+                        <Link href="/contact">
+                          <a>Contact</a>
+                        </Link>
+                      </h2>
+                      <p className="grey-text text-center w-responsive mx-auto mb-5">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Fugit, error amet numquam iure provident voluptate
+                        esse quasi, veritatis totam voluptas nostrum quisquam
+                        eum porro a pariatur veniam.
+                      </p>
+                      <MDBRow>
+                        <MDBCol md="12" className=" mb-4">
+                          <MDBCard collection className="z-depth-1-half">
+                            <div className="view zoom">
+                              <img
+                                src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg"
+                                className="img-fluid"
+                                alt=""
+                              />
+                              <div className="stripe dark">
+                                <a href="#!">
+                                  <p>
+                                    Red trousers <MDBIcon icon="angle-right" />
+                                  </p>
+                                </a>
+                              </div>
+                            </div>
+                          </MDBCard>
+                        </MDBCol>
+                        <MDBCol md="12" className=" mb-4">
+                          <MDBCard collection className="z-depth-1-half">
+                            <div className="view zoom">
+                              <img
+                                src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg"
+                                className="img-fluid"
+                                alt=""
+                              />
+                              <div className="stripe dark">
+                                <a href="#!">
+                                  <p>
+                                    Sweatshirt <MDBIcon icon="angle-right" />
+                                  </p>
+                                </a>
+                              </div>
+                            </div>
+                          </MDBCard>
+                        </MDBCol>
+                        <MDBCol md="12" className=" mb-4">
+                          <MDBCard collection className="z-depth-1-half">
+                            <div className="view zoom">
+                              <img
+                                src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg"
+                                className="img-fluid"
+                                alt=""
+                              />
+                              <div className="stripe dark">
+                                <a href="#!">
+                                  <p>
+                                    Accessories <MDBIcon icon="angle-right" />
+                                  </p>
+                                </a>
+                              </div>
+                            </div>
+                          </MDBCard>
+                        </MDBCol>
+                        <MDBCol md="12" className=" mb-4">
+                          <MDBCard collection className="z-depth-1-half">
+                            <div className="view zoom">
+                              <img
+                                src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg"
+                                className="img-fluid"
+                                alt=""
+                              />
+                              <div className="stripe dark">
+                                <a href="#!">
+                                  <p>
+                                    Sweatshirt <MDBIcon icon="angle-right" />
+                                  </p>
+                                </a>
+                              </div>
+                            </div>
+                          </MDBCard>
+                        </MDBCol>
+                      </MDBRow>
+                    </section>
+                  </MDBCol>
+                </MDBRow>
+              </MDBContainer>
+            </MDBModalBody>
+            <MDBModalFooter className="text-center">
+              <MDBContainer>
+                <MDBRow center>
+                  <MDBCol>
+                    <MDBBtn color="black" onClick={() => toggle()}>
+                      Close
+                    </MDBBtn>
+                  </MDBCol>
+                </MDBRow>
+              </MDBContainer>
+            </MDBModalFooter>
+          </MDBModal>
         </MDBContainer>
       </MDBNavbar>
     </>
   )
 }
 
-export default Header
+export default hamburgerMenuPage

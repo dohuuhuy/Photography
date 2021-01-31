@@ -1,67 +1,65 @@
 // import { MDBCol, MDBRow } from 'mdbreact'
-import {
-  MDBBtn,
-  MDBCol,
-  MDBContainer,
-  MDBFooter,
-  MDBIcon,
-  MDBInputGroup,
-  MDBRow,
-} from 'mdbreact'
-import Link from 'next/link'
+import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from 'mdbreact'
 import React from 'react'
 const Footer = () => {
   return (
-    <MDBFooter color="blue" className="font-small pt-4 mt-4">
-      <MDBContainer className="text-center text-md-left">
+    <MDBFooter color="orange" className="font-small pt-4 mt-4 ">
+      <MDBContainer>
         <MDBRow>
-          <MDBCol md="4">
-            <h5 className="title">whatever you eat </h5>
-            <p>If you don't know what to eat then let me choose one for you!</p>
-            <p>Nếu bạn không biết chọn ăn gì thì hãy để tôi chọn cho bạn !</p>
+          <MDBCol md="4" className="scol-pb-sm text-center">
+            <MDBRow>
+              <MDBCol md="10">
+                <h2>Office</h2>
+                <p>
+                  68/104A Đồng Nai - Phường 15 - Quận 10 - Thành phố Hồ Chí Minh
+                </p>
+              </MDBCol>
+            </MDBRow>
           </MDBCol>
-          <MDBCol md="4">
-            <h5 className="title">Cửa hàng</h5>
-            <ul className="mx-auto p-0">
-              <li className="list-unstyled">
-                <a href="#">List-store</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#">Product</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#">Foody</a>
-              </li>
-            </ul>
+          <MDBCol md="4" className="col-pb-sm text-center">
+            <h2>Get in Touch</h2>
+            <p>
+              <a href="#">ht.minh@gmail.com</a>
+            </p>
           </MDBCol>
-          <MDBCol md="4">
-            <h5 className="title">About Us</h5>
-            <ul className="p-0 ">
-              <li className="list-unstyled d-flex text-center">
-                <MDBInputGroup
-                  hint="Email"
-                  containerClassName="mb-3"
-                  append={
-                    <MDBBtn color="danger" className="m-0 px-3 py-2 z-depth-0">
-                      <MDBIcon icon="paper-plane" />
-                    </MDBBtn>
-                  }
-                />
+          <MDBCol md="4" className="col-pb-sm text-center">
+            <h2>Social</h2>
+            <ul className="list-inline py-2">
+              <li className="list-inline-item">
+                <a href="#!" className="p-2 fa-lg fb-ic">
+                  <MDBIcon fab icon="facebook-f" />
+                </a>
               </li>
-              <li className="list-unstyled">
-                <Link shallow href="/about">
-                  About
-                </Link>
+              <li className="list-inline-item">
+                <a href="#!" className="p-2 fa-lg tw-ic">
+                  <MDBIcon fab icon="twitter" />
+                </a>
+              </li>
+              <li className="list-inline-item">
+                <a href="#!" className="p-2 fa-lg gplus-ic">
+                  <MDBIcon fab icon="google-plus" />
+                </a>
+              </li>
+              <li className="list-inline-item">
+                <a href="#!" className="p-2 fa-lg li-ic">
+                  <MDBIcon fab icon="linkedin" />
+                </a>
               </li>
             </ul>
           </MDBCol>
         </MDBRow>
+        {/* <MDBRow>
+          <MDBCol md="12" className="text-center">
+            <p>
+              <span className="block">
+                Copyright © All rights reserved | Made with &nbsp;
+                <MDBIcon icon="heart" /> &nbsp;HuYi
+                <br />
+              </span>
+            </p>
+          </MDBCol>
+        </MDBRow> */}
       </MDBContainer>
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Made by: <a href="/"> HuYi </a>
-        </MDBContainer>
-      </div>
     </MDBFooter>
   )
 }

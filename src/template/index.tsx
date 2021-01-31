@@ -1,47 +1,40 @@
-import { MDBContainer } from 'mdbreact'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import React, { ReactNode } from 'react'
-// import BreadcrumbPage from '@components/organisms/Breadcrumb'
-import CarouselPage from '@components/organisms/CarouselPage'
 import Footer from '@components/organisms/Footer'
 import Header from '@components/organisms/Header'
-import MultiCarouselPage from '@components/organisms/MultiCarouselPage'
-import BreadcrumbPage from '@components/organisms/Breadcrumb'
+import { MDBContainer } from 'mdbreact'
+import React, { ReactNode } from 'react'
 type Props = {
   children?: ReactNode
-  title?: string
+  type?: string
 }
 
-const Layout = ({ children, title = 'Food' }: Props) => {
-  const router = useRouter()
-  const array_hidden = ['/login', '/register']
-  return array_hidden.includes(router.asPath) ? (
-    <> {children} </>
-  ) : (
+const Layout = ({ children, type }: Props) => {
+  const main = (type: any) => {
+    {
+      switch (type) {
+        case 'none':
+          return (
+            <MDBContainer
+              className="vh-100 p-0 m-0"
+              style={{ marginTop: 'rem' }}
+            >
+              {children}
+            </MDBContainer>
+          )
+
+        default:
+          return (
+            <MDBContainer className="p-0" style={{ marginTop: 'rem' }}>
+              {children}
+            </MDBContainer>
+          )
+      }
+    }
+  }
+
+  return (
     <>
-      {/* begin Header */}
-      <Head>
-        <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-
-      {/* begin Header */}
       <Header />
-
-      {/* begin main */}
-      <main style={{ paddingTop: '4.4rem' }}>
-        {/* begin BreadcrumbPage */}
-        <BreadcrumbPage />
-        {/* begin MultiCarouselPage */}
-        <MultiCarouselPage />
-        {/* begin CarouselPage */}
-        <CarouselPage />
-        {/* begin Container main */}
-        <MDBContainer>{children}</MDBContainer>
-      </main>
-      {/* begin Footer */}
+      {main(type)}
       <Footer />
     </>
   )
