@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next -p 80",
     "build": "next build",
-    "start": "next start -p 3008",
+    "start": "next start -p 6000",
     "export": "npm run build && next export",
     "prettier": "prettier  --write **/*.{ts,tsx,js}",
     "lint:ts": "npm run prettier && tslint -c tslint.json -t stylish --fix {pages,src,server}/**/*.{ts,tsx}",
