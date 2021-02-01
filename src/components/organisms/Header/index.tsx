@@ -13,14 +13,20 @@ import {
   MDBNavbarBrand,
   MDBRow,
 } from 'mdbreact'
+
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 
 const hamburgerMenuPage = () => {
   const [isOpen, setisOpen] = useState(false)
-  const toggle = () => {
-    setisOpen(!isOpen)
-  }
+  const toggle = () => setisOpen(!isOpen)
+  const router = useRouter()
+  useEffect(() => {
+    router.events.on('routeChangeStart', (_url) => {
+      setisOpen(false)
+    })
+  }, [router])
 
   return (
     <>
@@ -32,9 +38,11 @@ const hamburgerMenuPage = () => {
       >
         <MDBContainer className={'p-0'}>
           <MDBNavbarBrand>
-            <p className="text-warning text-uppercase font-weight-bold">
-              Designer UI/UX
-            </p>
+            <Link href="/">
+              <a className="text-warning text-uppercase font-weight-bold">
+                Designer UI/UX
+              </a>
+            </Link>
           </MDBNavbarBrand>
           <MDBBtn
             className="m-0"
@@ -45,6 +53,8 @@ const hamburgerMenuPage = () => {
             <MDBIcon size="2x" icon="home" />
           </MDBBtn>
           <MDBModal
+            disableFocusTrap={true}
+            autoFocus={true}
             isOpen={isOpen}
             toggle={() => toggle()}
             fullHeight
@@ -83,7 +93,7 @@ const hamburgerMenuPage = () => {
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="/">
+                        <Link href="/blog">
                           <a className="nav-link">Blog</a>
                         </Link>
                       </li>

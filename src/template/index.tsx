@@ -1,43 +1,40 @@
 import Footer from '@components/organisms/Footer'
 import Header from '@components/organisms/Header'
 import { MDBContainer } from 'mdbreact'
+import { useRouter } from 'next/router'
 import React, { ReactNode } from 'react'
 type Props = {
   children?: ReactNode
-  type?: string
 }
 
-const Layout = ({ children, type }: Props) => {
-  const main = (type: any) => {
-    {
-      switch (type) {
-        case 'none':
-          return (
-            <MDBContainer
-              className="vh-100 p-0 m-0"
-              style={{ marginTop: 'rem' }}
-            >
-              {children}
-            </MDBContainer>
-          )
+const Layout = ({ children }: Props) => {
+  const { asPath } = useRouter()
 
-        default:
-          return (
-            <MDBContainer className="p-0" style={{ marginTop: 'rem' }}>
-              {children}
-            </MDBContainer>
-          )
-      }
-    }
+  switch (asPath) {
+    case '/about':
+      return (
+        <>
+          <Header />
+          <main style={{ minHeight: '900px' }} className="w-100">
+            {children}
+          </main>
+        </>
+      )
+
+    default:
+      return (
+        <>
+          <Header />
+          <MDBContainer
+            className="p-0"
+            style={{ marginTop: '6rem', minHeight: '900px' }}
+          >
+            {children}
+          </MDBContainer>
+          <Footer />
+        </>
+      )
   }
-
-  return (
-    <>
-      <Header />
-      {main(type)}
-      <Footer />
-    </>
-  )
 }
 
 export default Layout
