@@ -13,6 +13,7 @@ import {
   MDBNavbarBrand,
   MDBRow,
 } from 'mdbreact'
+
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
@@ -26,11 +27,6 @@ const hamburgerMenuPage = () => {
       setisOpen(false)
     })
   }, [router])
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      console.log('window.innerHeight', window.pageYOffset)
-    }
-  }, [])
 
   return (
     <>
@@ -40,7 +36,7 @@ const hamburgerMenuPage = () => {
         fixed="top"
         scrolling
       >
-        <MDBContainer className={''}>
+        <MDBContainer className={'p-0'}>
           <MDBNavbarBrand>
             <Link href="/">
               <a className="text-warning text-uppercase font-weight-bold">

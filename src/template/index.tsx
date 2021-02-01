@@ -25,10 +25,7 @@ const Layout = ({ children }: Props) => {
       return (
         <>
           <Header />
-          <MDBContainer
-            className="p-0"
-            style={{ marginTop: '6rem', minHeight: '900px' }}
-          >
+          <MDBContainer style={{ marginTop: '6rem', minHeight: '900px' }}>
             {children}
           </MDBContainer>
           <Footer />
