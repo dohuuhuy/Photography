@@ -118,5 +118,5 @@ const ContactPage = () => {
     </section>
   )
 }
-
+ContactPage.layout = 'default'
 export default ContactPage

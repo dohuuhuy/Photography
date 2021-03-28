@@ -117,4 +117,5 @@ const AboutPage = () => {
     </MDBRow>
   )
 }
+AboutPage.layout = 'about'
 export default AboutPage

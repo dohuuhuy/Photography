@@ -171,4 +171,5 @@ const BlogPage = () => {
   )
 }
 
+BlogPage.layout = 'default'
 export default BlogPage
