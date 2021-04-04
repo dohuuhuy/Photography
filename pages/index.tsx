@@ -1,12 +1,17 @@
+import { MDBCol, MDBContainer, MDBRow } from 'mdbreact'
 import React from 'react'
 
 const HomePage = () => {
   return (
-    <>
-      <h1> Trang index </h1>
-    </>
+    <MDBContainer>
+      <MDBRow>
+        <MDBCol>
+          <h1> helo</h1>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
   )
 }
-HomePage.layout = 'default'
+HomePage.layout = 'home'
 
 export default HomePage

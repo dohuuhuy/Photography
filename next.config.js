@@ -32,14 +32,6 @@ const nextConfig = {
         'svg-sprite-loader',
         {
           loader: 'svgo-loader',
-          options: {
-            plugins: [
-              { removeAttrs: { attrs: '(fill)' } },
-              { removeTitle: true },
-              { cleanupIDs: true },
-              { removeStyleElement: true },
-            ],
-          },
         },
       ],
     })
@@ -48,3 +40,11 @@ const nextConfig = {
 }
 const plugins = [withImages]
 module.exports = withPugins(plugins, nextConfig)
+module.exports = {
+  exportPathMap: async function () {
+    const paths = {
+      '/': { page: '/' },
+    }
+    return paths
+  },
+}

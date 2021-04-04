@@ -1,22 +1,22 @@
+import Carousel from '@components/organisms/CarouselPage'
 import Footer from '@components/organisms/Footer'
 import Header from '@components/organisms/Header'
-import { MDBContainer } from 'mdbreact'
 import React, { ReactNode } from 'react'
 type Props = {
   children?: ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+const HomeLayout = ({ children }: Props) => {
   return (
     <>
       <Header />
-
-      <MDBContainer style={{ marginTop: '6rem', minHeight: '900px' }}>
-        {children}
-      </MDBContainer>
+      <main className="w-100 vh-100 p-0">
+        <Carousel />
+      </main>
+      <main>{children}</main>
       <Footer />
     </>
   )
 }
 
-export default Layout
+export default HomeLayout

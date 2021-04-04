@@ -1,3 +1,4 @@
+import cx from 'classnames'
 import {
   MDBBtn,
   MDBCard,
@@ -14,36 +15,15 @@ import {
   MDBRow,
 } from 'mdbreact'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import styles from './style.module.scss'
 
 const hamburgerMenuPage = () => {
   const [isOpen, setisOpen] = useState(false)
-  const [isActive, setisActive] = useState(false)
+
+  const [iconMenu, seticonMenu] = useState('door-closed')
 
   const toggle = () => setisOpen(!isOpen)
-  const router = useRouter()
-  useEffect(() => {
-    router.events.on('routeChangeStart', (_url) => {
-      setisOpen(false)
-    })
-  }, [router])
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      console.log('window.innerHeight', window.pageYOffset)
-    }
-  }, [])
-
-  const handleScroll = () => {
-    const offset = window.scrollY
-    if (offset > 200) {
-      setisActive(true)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-  })
 
   return (
     <>
@@ -53,22 +33,26 @@ const hamburgerMenuPage = () => {
         fixed="top"
         scrolling
       >
-        <MDBContainer className={isActive ? ' active' : ''}>
+        <MDBContainer>
           <MDBNavbarBrand>
             <Link href="/">
-              <a className="text-warning text-uppercase font-weight-bold">
+              <a
+                className={cx(
+                  styles.logo_branch,
+                  'text-dark text-uppercase font-weight-bold',
+                )}
+              >
                 Designer UI/UX
               </a>
             </Link>
           </MDBNavbarBrand>
-          <MDBBtn
-            className="m-0"
-            color="orange"
-            size="sm"
+          <a
             onClick={() => toggle()}
+            onMouseMove={() => seticonMenu('door-open')}
+            onMouseLeave={() => seticonMenu('door-closed')}
           >
-            <MDBIcon size="2x" icon="home" />
-          </MDBBtn>
+            <MDBIcon size="2x" icon={iconMenu} />
+          </a>
         </MDBContainer>
 
         <MDBModal

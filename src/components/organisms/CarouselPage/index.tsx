@@ -1,25 +1,21 @@
-import { MDBCarousel, MDBContainer } from 'mdbreact'
-import { useRouter } from 'next/router'
+import { MDBCarousel } from 'mdbreact'
 import React from 'react'
 import { arr_Image } from '../../../utils/sample-data'
 import CarouselImage from '../../molecules/CarouselImage'
-
-const CarouselPage = () => {
-  const router = useRouter()
-  const array_hidden = ['/about']
-  return !array_hidden.includes(router.asPath) ? null : (
-    <MDBContainer fluid>
+const Carousel = () => {
+  return (
+    <>
       <MDBCarousel
+        // className={cx(styles.thumb, 'slide-carosel-desktop')}
         activeItem={1}
         length={3}
-        showControls={true}
+        showControls={false}
         showIndicators={true}
-        className="z-depth-1"
       >
-        <CarouselImage image={arr_Image} />
+        <CarouselImage list_image={arr_Image} />
       </MDBCarousel>
-    </MDBContainer>
+    </>
   )
 }
 
-export default CarouselPage
+export default Carousel

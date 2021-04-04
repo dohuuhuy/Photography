@@ -1,13 +1,10 @@
 import CarouselCard from '@components/molecules/CarouselCard'
 import { MDBCarousel, MDBContainer } from 'mdbreact'
-import { useRouter } from 'next/router'
 import React from 'react'
 import { arr_Carousel } from 'src/utils/sample-data'
 
 const MultiCarouselPage = () => {
-  const router = useRouter()
-  const array_hidden = ['/']
-  return !array_hidden.includes(router.asPath) ? null : (
+  return (
     <MDBContainer>
       <MDBCarousel
         activeItem={1}

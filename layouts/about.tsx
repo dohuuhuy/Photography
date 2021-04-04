@@ -8,9 +8,7 @@ const AboutLayout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      <main style={{ minHeight: '900px' }} className="w-100">
-        {children}
-      </main>
+      <main className="w-100 vh-100">{children}</main>
     </>
   )
 }
