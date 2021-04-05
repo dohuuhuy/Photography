@@ -42,7 +42,7 @@ const hamburgerMenuPage = () => {
                   'text-dark text-uppercase font-weight-bold',
                 )}
               >
-                Designer UI/UX
+                HuYi
               </a>
             </Link>
           </MDBNavbarBrand>
@@ -91,7 +91,7 @@ const hamburgerMenuPage = () => {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/">
+                      <Link href="/work">
                         <a className="nav-link">Work</a>
                       </Link>
                     </li>

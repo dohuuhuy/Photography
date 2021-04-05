@@ -14,7 +14,7 @@ import React from 'react'
 
 const AboutPage = () => {
   return (
-    <MDBRow className="w-100 vh-100">
+    <MDBRow>
       <MDBCol md="5">
         <Image src="/images/about.jpg" layout="fill" objectFit="fill" />
       </MDBCol>
