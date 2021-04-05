@@ -6,11 +6,10 @@ type Props = {
   children?: ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+const defaultLayout = ({ children }: Props) => {
   return (
     <>
       <Header />
-
       <MDBContainer style={{ marginTop: '6rem', minHeight: '900px' }}>
         {children}
       </MDBContainer>
@@ -19,4 +18,4 @@ const Layout = ({ children }: Props) => {
   )
 }
 
-export default Layout
+export default defaultLayout

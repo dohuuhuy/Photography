@@ -1,3 +1,4 @@
+import defaultLayout from 'layouts/default'
 import {
   MDBCard,
   MDBCardBody,
@@ -171,5 +172,5 @@ const BlogPage = () => {
   )
 }
 
-BlogPage.layout = 'default'
+BlogPage.Layout = defaultLayout
 export default BlogPage

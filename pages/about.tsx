@@ -1,3 +1,4 @@
+import AboutLayout from 'layouts/about'
 import {
   MDBCard,
   MDBCardBody,
@@ -117,5 +118,5 @@ const AboutPage = () => {
     </MDBRow>
   )
 }
-AboutPage.layout = 'about'
+AboutPage.Layout = AboutLayout
 export default AboutPage

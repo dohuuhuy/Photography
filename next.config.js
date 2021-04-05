@@ -21,30 +21,13 @@ const cssOptions = {
 const nextConfig = {
   ...cssOptions,
   env: {
-    api: 'http://45.119.213.86:3337/',
+    api: '',
   },
 
   webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      include: path.join(process.cwd(), 'src', 'components', 'icon', 'icons'),
-      use: [
-        'svg-sprite-loader',
-        {
-          loader: 'svgo-loader',
-        },
-      ],
-    })
+    config.module.rules.push({})
     return config
   },
 }
 const plugins = [withImages]
 module.exports = withPugins(plugins, nextConfig)
-module.exports = {
-  exportPathMap: async function () {
-    const paths = {
-      '/': { page: '/' },
-    }
-    return paths
-  },
-}

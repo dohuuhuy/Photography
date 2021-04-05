@@ -1,3 +1,4 @@
+import defaultLayout from 'layouts/default'
 import {
   MDBBtn,
   MDBCard,
@@ -118,5 +119,5 @@ const ContactPage = () => {
     </section>
   )
 }
-ContactPage.layout = 'default'
+ContactPage.Layout = defaultLayout
 export default ContactPage

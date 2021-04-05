@@ -1,3 +1,4 @@
+import HomeLayout from 'layouts/home'
 import { MDBCol, MDBContainer, MDBRow } from 'mdbreact'
 import React from 'react'
 
@@ -12,6 +13,6 @@ const HomePage = () => {
     </MDBContainer>
   )
 }
-HomePage.layout = 'home'
+HomePage.Layout = HomeLayout
 
 export default HomePage
