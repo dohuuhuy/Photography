@@ -1,0 +1,11 @@
+@import '@common/scss/custom-variables';
+.main {
+  height: calc(100vh - 120px);
+  border-radius: 20px;
+  color: white;
+  margin-top: 6em;
+  background-image: url('./../../public/images/home-bg.jpg');
+  @media #{$small-and-down} {
+    height: 100%;
+  }
+}

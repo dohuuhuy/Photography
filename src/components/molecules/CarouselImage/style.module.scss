@@ -16,6 +16,9 @@
   color: #f2f2f2;
   font-weight: 700;
   font-family: 'Playfair Display', Georgia, serif;
+  @media #{$small-and-down} {
+    display: none;
+  }
 }
 .tag {
   display: block;

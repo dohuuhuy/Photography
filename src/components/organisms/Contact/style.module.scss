@@ -1,0 +1,10 @@
+@import '@common/scss/custom-variables';
+.map {
+  height: 300px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  .iframe_map {
+    border: 0;
+  }
+}

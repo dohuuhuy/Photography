@@ -10,7 +10,7 @@ const defaultLayout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      <MDBContainer fluid style={{ marginTop: '6rem', minHeight: '900px' }}>
+      <MDBContainer style={{ marginTop: '6rem', minHeight: '900px' }}>
         {children}
       </MDBContainer>
       <Footer />
