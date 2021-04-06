@@ -143,3 +143,54 @@ export const list_card_about = [
                   Integer posuere erat a ante.`,
   },
 ]
+
+export const list_product = [
+  {
+    link_product: '#',
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (55).jpg',
+    tag: 'Camera',
+    title: 'GoPro',
+    description: `  Lorem ipsum dolor sit amet, consectetur adipisicing minima veniam elit.`,
+  },
+  {
+    link_product: '#',
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (55).jpg',
+    tag: 'Camera',
+    title: 'GoPro',
+    description: `  Lorem ipsum dolor sit amet, consectetur adipisicing minima veniam elit.`,
+  },
+  {
+    link_product: '#',
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (55).jpg',
+    tag: 'Camera',
+    title: 'GoPro',
+    description: `  Lorem ipsum dolor sit amet, consectetur adipisicing minima veniam elit.`,
+  },
+  {
+    link_product: '#',
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (55).jpg',
+    tag: 'Camera',
+    title: 'GoPro',
+    description: `  Lorem ipsum dolor sit amet, consectetur adipisicing minima veniam elit.`,
+  },
+  {
+    link_product: '#',
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (55).jpg',
+    tag: 'Camera',
+    title: 'GoPro',
+    description: `  Lorem ipsum dolor sit amet, consectetur adipisicing minima veniam elit.`,
+  },
+]
+export const places = [
+  'Pizzas',
+  'Sandwiches',
+  'Salads',
+  'Soup',
+  'Japanese food',
+  'Pastas',
+]

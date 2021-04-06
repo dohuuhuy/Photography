@@ -7,173 +7,55 @@ import {
   MDBCol,
   MDBRow,
 } from 'mdbreact'
+import Link from 'next/link'
 import React from 'react'
+import { Produc_interface } from 'src/interfaces'
+import { list_product } from 'src/utils/sample-data'
 import styles from './style.module.scss'
-import cx from 'classnames'
 
 const Blog = () => {
   return (
     <section className="text-center my-5 ">
-      <h2
-        className={cx(
-          styles.title,
-          'h1-responsive font-weight-bold text-center my-5',
-        )}
-      >
-        Sản phẩm
-      </h2>
+      <h2 className={styles.title}>Sản phẩm</h2>
       <p className="grey-text text-center w-responsive mx-auto mb-5">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-        amet numquam iure provident voluptate esse quasi, veritatis totam
-        voluptas nostrum quisquam eum porro a pariatur veniam.
+        Lĩnh vực về mãng y tế và template CV
       </p>
       <MDBRow>
-        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-          <MDBCard wide ecommerce>
-            <MDBCardImage
-              cascade
-              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (55).jpg"
-              top
-              alt="sample photo"
-            />
-            <MDBCardBody cascade className="text-center">
-              <a href="#!" className="text-muted">
-                <h5>Camera</h5>
-              </a>
-              <MDBCardTitle>
-                <strong>
-                  <a href="#!">GoPro</a>
-                </strong>
-              </MDBCardTitle>
-              <MDBCardText>
-                Lorem ipsum dolor sit amet, consectetur adipisicing minima
-                veniam elit.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-          <MDBCard wide ecommerce>
-            <MDBCardImage
-              cascade
-              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (49).jpg"
-              top
-              alt="sample photo"
-            />
-            <MDBCardBody cascade className="text-center">
-              <a href="#!" className="text-muted">
-                <h5>Photography</h5>
-              </a>
-              <MDBCardTitle>
-                <strong>
-                  <a href="#!">Camera</a>
-                </strong>
-              </MDBCardTitle>
-              <MDBCardText>
-                Lorem ipsum dolor sit amet, consectetur adipisicing minima
-                veniam elit.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-          <MDBCard wide ecommerce>
-            <MDBCardImage
-              cascade
-              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (56).jpg"
-              top
-              alt="sample photo"
-            />
-            <MDBCardBody cascade className="text-center">
-              <a href="#!" className="text-muted">
-                <h5>Smartphone</h5>
-              </a>
-              <MDBCardTitle>
-                <strong>
-                  <a href="#!">iPhone 6S</a>
-                </strong>
-              </MDBCardTitle>
-              <MDBCardText>
-                Lorem ipsum dolor sit amet, consectetur adipisicing minima
-                veniam elit.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-      <MDBRow className="mt-5">
-        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-          <MDBCard wide ecommerce>
-            <MDBCardImage
-              cascade
-              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (55).jpg"
-              top
-              alt="sample photo"
-            />
-            <MDBCardBody cascade className="text-center">
-              <a href="#!" className="text-muted">
-                <h5>Camera</h5>
-              </a>
-              <MDBCardTitle>
-                <strong>
-                  <a href="#!">GoPro</a>
-                </strong>
-              </MDBCardTitle>
-              <MDBCardText>
-                Lorem ipsum dolor sit amet, consectetur adipisicing minima
-                veniam elit.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-          <MDBCard wide ecommerce>
-            <MDBCardImage
-              cascade
-              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (49).jpg"
-              top
-              alt="sample photo"
-            />
-            <MDBCardBody cascade className="text-center">
-              <a href="#!" className="text-muted">
-                <h5>Photography</h5>
-              </a>
-              <MDBCardTitle>
-                <strong>
-                  <a href="#!">Camera</a>
-                </strong>
-              </MDBCardTitle>
-              <MDBCardText>
-                Lorem ipsum dolor sit amet, consectetur adipisicing minima
-                veniam elit.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-          <MDBCard wide ecommerce>
-            <MDBCardImage
-              cascade
-              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img (56).jpg"
-              top
-              alt="sample photo"
-            />
-            <MDBCardBody cascade className="text-center">
-              <a href="#!" className="text-muted">
-                <h5>Smartphone</h5>
-              </a>
-              <MDBCardTitle>
-                <strong>
-                  <a href="#!">iPhone 6S</a>
-                </strong>
-              </MDBCardTitle>
-              <MDBCardText>
-                Lorem ipsum dolor sit amet, consectetur adipisicing minima
-                veniam elit.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
+        {list_product.map(
+          (
+            {
+              tag,
+              title,
+              description,
+              link_product,
+              link_img,
+            }: Produc_interface,
+            i: number,
+          ) => {
+            return (
+              <MDBCol lg="4" md="12" className={styles.card_product} key={i}>
+                <MDBCard wide ecommerce>
+                  <MDBCardImage cascade src={link_img} top alt="sample photo" />
+                  <MDBCardBody cascade className="text-center">
+                    <Link href={link_product}>
+                      <a className="text-muted">
+                        <h5>{tag}</h5>
+                      </a>
+                    </Link>
+                    <MDBCardTitle>
+                      <strong>
+                        <Link href={link_product}>
+                          <a>{title}</a>
+                        </Link>
+                      </strong>
+                    </MDBCardTitle>
+                    <MDBCardText>{description}</MDBCardText>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+            )
+          },
+        )}
       </MDBRow>
     </section>
   )

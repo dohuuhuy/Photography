@@ -1,20 +1,16 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Footer from '@components/organisms/Footer'
+import SideNavPage from '@components/organisms/SideNav'
+import { MDBContainer } from 'mdbreact'
+import React from 'react'
 
 const AdminLayout = ({ children }: any) => {
   return (
     <>
-      <Head>
-        <title>Admin</title>
-        <meta charSet="utf-8" />
-      </Head>
-      <div>
-        <div className="sidenav">
-          <Link href="/">Home</Link>
-          <Link href="/contact-us">Contact Us</Link>
-        </div>
-        <div id="main">{children}</div>
-      </div>
+      <SideNavPage />
+      <MDBContainer style={{ marginTop: '6rem', minHeight: '900px' }}>
+        {children}
+      </MDBContainer>
+      <Footer />
     </>
   )
 }

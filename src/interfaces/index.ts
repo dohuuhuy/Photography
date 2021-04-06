@@ -27,3 +27,11 @@ export interface CardAbout_interface {
   color?: string
   text?: string
 }
+
+export interface Produc_interface {
+  link_product: string
+  link_img: string
+  title: string
+  tag: string
+  description: string
+}
