@@ -19,3 +19,11 @@ export interface MenuModal_interface {
   isOpen: boolean
   toggle(): void
 }
+
+export interface CardAbout_interface {
+  title: string
+  description: string
+  footer: string
+  color?: string
+  text?: string
+}

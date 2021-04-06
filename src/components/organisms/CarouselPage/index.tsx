@@ -6,7 +6,7 @@ const Carousel = () => {
   return (
     <>
       <MDBCarousel
-        // className={cx(styles.thumb, 'slide-carosel-desktop')}
+        interval={2500}
         activeItem={1}
         length={3}
         showControls={false}
