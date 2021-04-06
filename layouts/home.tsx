@@ -14,8 +14,8 @@ const HomeLayout = ({ children }: Props) => {
       <MDBContainer fluid className="w-100 vh-100 p-0">
         <Carousel />
       </MDBContainer>
-      {/* <MDBContainer>{children}</MDBContainer>
-      <Footer /> */}
+      <MDBContainer>{children}</MDBContainer>
+      {/* <Footer /> */}
     </>
   )
 }
