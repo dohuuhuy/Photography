@@ -1,21 +1,20 @@
-import React from 'react'
 import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
+  MDBBtn,
   MDBCard,
   MDBCardBody,
-  MDBInput,
-  MDBBtn,
-  MDBIcon,
-  MDBModalFooter,
   MDBCardHeader,
+  MDBCol,
+  MDBIcon,
+  MDBInput,
+  MDBModalFooter,
+  MDBRow,
 } from 'mdbreact'
+import React from 'react'
 
 const SignIn = () => {
   return (
-    <MDBContainer>
-      <MDBRow>
+    <>
+      <MDBRow center className="mt-5">
         <MDBCol md="6">
           <MDBCard>
             <MDBCardBody className="mx-4">
@@ -100,7 +99,7 @@ const SignIn = () => {
           </MDBCard>
         </MDBCol>
       </MDBRow>
-    </MDBContainer>
+    </>
   )
 }
 

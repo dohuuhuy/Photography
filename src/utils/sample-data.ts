@@ -46,3 +46,48 @@ export const list_menu = [
     slug: '/about',
   },
 ]
+
+export const list_social = [
+  {
+    link: 'https://www.facebook.com/dohuuhuy98/',
+    icon: 'facebook-square',
+    classname: 'p-2 fa-lg fb-ic',
+  },
+  {
+    link: '#',
+    icon: 'google-plus-square',
+    classname: 'p-2 fa-lg gplus-ic',
+  },
+  {
+    link: '#',
+    icon: 'skype',
+    classname: 'p-2 fa-lg li-ic',
+  },
+]
+
+export const list_product_menu = [
+  {
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg',
+    link_product: '#',
+    title_product: 'Red trousers',
+  },
+  {
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg',
+    link_product: '#',
+    title_product: 'Sweatshirt',
+  },
+  {
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg',
+    link_product: '#',
+    title_product: 'Accessories',
+  },
+  {
+    link_img:
+      'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg',
+    link_product: '#',
+    title_product: 'Sweatshirt',
+  },
+]

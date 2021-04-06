@@ -1,20 +1,10 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import { MDBContainer } from 'mdbreact'
+import React from 'react'
 
 const LoginLayout = ({ children }: any) => {
   return (
     <>
-      <Head>
-        <title>Login</title>
-        <meta charSet="utf-8" />
-      </Head>
-      <div>
-        <div className="sidenav">
-          <Link href="/">Home</Link>
-          <Link href="/contact-us">Contact Us</Link>
-        </div>
-        <div id="main">{children}</div>
-      </div>
+      <MDBContainer className="vh-100 w-100">{children}</MDBContainer>
     </>
   )
 }

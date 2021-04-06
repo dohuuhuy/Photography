@@ -1,54 +1,34 @@
 // import { MDBCol, MDBRow } from 'mdbreact'
+import { Social } from '@components/molecules/Social'
 import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from 'mdbreact'
 import React from 'react'
+import styles from './style.module.scss'
+
 const Footer = () => {
   return (
-    <MDBFooter color="orange" className="font-small pt-4 mt-4 ">
-      <MDBContainer>
+    <MDBFooter color="black" className="font-small pt-4 mt-4 ">
+      <MDBContainer className={styles.footer}>
         <MDBRow>
           <MDBCol md="4" className="scol-pb-sm text-center">
             <MDBRow>
               <MDBCol md="10">
-                <h2>Office</h2>
-                <p>
-                  68/104A Đồng Nai - Phường 15 - Quận 10 - Thành phố Hồ Chí Minh
-                </p>
+                <h5>Văn Phòng</h5>
+                <p>38/18 Phường 14 Gò Vấp TP. Hồ Chí Minh</p>
               </MDBCol>
             </MDBRow>
           </MDBCol>
           <MDBCol md="4" className="col-pb-sm text-center">
-            <h2>Get in Touch</h2>
+            <h5>Liên hệ</h5>
             <p>
-              <a href="#">ht.minh@gmail.com</a>
+              <a href="#">dohuuhuy2@gmail.com</a>
             </p>
           </MDBCol>
           <MDBCol md="4" className="col-pb-sm text-center">
-            <h2>Social</h2>
-            <ul className="list-inline py-2">
-              <li className="list-inline-item">
-                <a href="#!" className="p-2 fa-lg fb-ic">
-                  <MDBIcon fab icon="facebook-f" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#!" className="p-2 fa-lg tw-ic">
-                  <MDBIcon fab icon="twitter" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#!" className="p-2 fa-lg gplus-ic">
-                  <MDBIcon fab icon="google-plus" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#!" className="p-2 fa-lg li-ic">
-                  <MDBIcon fab icon="linkedin" />
-                </a>
-              </li>
-            </ul>
+            <h5>Mạng xã hội</h5>
+            <Social />
           </MDBCol>
         </MDBRow>
-        {/* <MDBRow>
+        <MDBRow>
           <MDBCol md="12" className="text-center">
             <p>
               <span className="block">
@@ -58,7 +38,7 @@ const Footer = () => {
               </span>
             </p>
           </MDBCol>
-        </MDBRow> */}
+        </MDBRow>
       </MDBContainer>
     </MDBFooter>
   )

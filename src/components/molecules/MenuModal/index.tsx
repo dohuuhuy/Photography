@@ -1,33 +1,23 @@
 import {
-  MDBModal,
-  MDBModalHeader,
-  MDBModalBody,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBInputGroup,
   MDBBtn,
+  MDBCol,
+  MDBContainer,
   MDBIcon,
-  MDBCard,
+  MDBInputGroup,
+  MDBModal,
+  MDBModalBody,
   MDBModalFooter,
+  MDBModalHeader,
+  MDBRow,
 } from 'mdbreact'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { list_menu } from 'src/utils/sample-data'
-import styles from './style.module.scss'
-import cx from 'classnames'
-import Image from 'next/image'
+import { MenuModal_interface } from 'src/interfaces'
+import { ListProducMenu } from '../ListProducMenu'
+import { ListMenu } from './list_menu'
 
-interface menu_interface {
-  title: string
-  slug: string
-}
-interface Props {
-  isOpen: boolean
-  toggle(): void
-}
-
-const MenuModal = ({ isOpen, toggle }: Props) => {
+const MenuModal = ({ isOpen, toggle }: MenuModal_interface) => {
   return (
     <MDBModal
       disableFocusTrap={true}
@@ -49,7 +39,7 @@ const MenuModal = ({ isOpen, toggle }: Props) => {
           <MDBRow center>
             <MDBCol md="11">
               <MDBInputGroup
-                hint="Find ..."
+                hint="Tìm ..."
                 containerClassName="mb-3"
                 append={
                   <MDBBtn color="yellow" className="m-0 px-3 py-2 z-depth-0">
@@ -59,21 +49,7 @@ const MenuModal = ({ isOpen, toggle }: Props) => {
               />
             </MDBCol>
           </MDBRow>
-          <MDBRow>
-            <MDBCol md="12">
-              <ul className={cx(styles.menu, 'nav flex-column')}>
-                {list_menu.map(({ title, slug }: menu_interface, i: number) => {
-                  return (
-                    <li className="nav-item" key={i}>
-                      <Link href={slug}>
-                        <a className="nav-link">{title}</a>
-                      </Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </MDBCol>
-          </MDBRow>
+          <ListMenu />
           <MDBRow>
             <MDBCol>
               <section className="text-center my-5">
@@ -88,83 +64,10 @@ const MenuModal = ({ isOpen, toggle }: Props) => {
                   veritatis totam voluptas nostrum quisquam eum porro a pariatur
                   veniam.
                 </p>
-                <MDBRow>
-                  <MDBCol md="12" className=" mb-4">
-                    <MDBCard collection className="z-depth-1-half">
-                      <div className="view zoom">
-                        <img
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                        <div className="stripe dark">
-                          <a href="#!">
-                            <p>
-                              Red trousers <MDBIcon icon="angle-right" />
-                            </p>
-                          </a>
-                        </div>
-                      </div>
-                    </MDBCard>
-                  </MDBCol>
-                  <MDBCol md="12" className=" mb-4">
-                    <MDBCard collection className="z-depth-1-half">
-                      <div className="view zoom">
-                        <img
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                        <div className="stripe dark">
-                          <a href="#!">
-                            <p>
-                              Sweatshirt <MDBIcon icon="angle-right" />
-                            </p>
-                          </a>
-                        </div>
-                      </div>
-                    </MDBCard>
-                  </MDBCol>
-                  <MDBCol md="12" className=" mb-4">
-                    <MDBCard collection className="z-depth-1-half">
-                      <div className="view zoom">
-                        <img
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                        <div className="stripe dark">
-                          <a href="#!">
-                            <p>
-                              Accessories <MDBIcon icon="angle-right" />
-                            </p>
-                          </a>
-                        </div>
-                      </div>
-                    </MDBCard>
-                  </MDBCol>
-                  <MDBCol md="12" className=" mb-4">
-                    <MDBCard collection className="z-depth-1-half">
-                      <div className="view zoom">
-                        <img
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                        <div className="stripe dark">
-                          <a href="#!">
-                            <p>
-                              Sweatshirt <MDBIcon icon="angle-right" />
-                            </p>
-                          </a>
-                        </div>
-                      </div>
-                    </MDBCard>
-                  </MDBCol>
-                </MDBRow>
               </section>
             </MDBCol>
           </MDBRow>
+          <ListProducMenu />
         </MDBContainer>
       </MDBModalBody>
       <MDBModalFooter className="text-center">
