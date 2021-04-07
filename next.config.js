@@ -21,7 +21,7 @@ const cssOptions = {
 const nextConfig = {
   ...cssOptions,
   env: {
-    api: '',
+    API_BE: 'http://localhost:3006',
   },
 
   webpack(config) {

@@ -1,11 +1,12 @@
-import { createWrapper } from 'next-redux-wrapper';
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './reducer';
+import { applyMiddleware, createStore, Middleware, StoreEnhancer } from 'redux'
+import { createWrapper, MakeStore } from 'next-redux-wrapper'
+import createSagaMiddleware from 'redux-saga'
 
+import rootReducer from './reducer'
+import rootSaga from './saga'
+import { AppState } from './interfaces'
 
-
-const bindMiddleware = (middleware: any) => {
+const bindMiddleware = (middleware: Middleware[]): StoreEnhancer => {
   if (process.env.NODE_ENV !== 'production') {
     const { composeWithDevTools } = require('redux-devtools-extension')
     return composeWithDevTools(applyMiddleware(...middleware))
@@ -13,10 +14,14 @@ const bindMiddleware = (middleware: any) => {
   return applyMiddleware(...middleware)
 }
 
-const initStore = () => {
-  return createStore(
-    rootReducer,
-    bindMiddleware([thunk]))
-}
-export const wrapper = createWrapper(initStore)
+export const makeStore: MakeStore<AppState> = () => {
+  const sagaMiddleware = createSagaMiddleware()
 
+  const store = createStore(rootReducer, bindMiddleware([sagaMiddleware]))
+
+  store.sagaTask = sagaMiddleware.run(rootSaga)
+
+  return store
+}
+
+export const wrapper = createWrapper<AppState>(makeStore, { debug: true })
