@@ -1,0 +1,39 @@
+import { decrement, increment, reset } from '@store/actions'
+import { AppState } from '@store/interfaces'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+const Counter: React.FC = () => {
+  const count = useSelector((state: AppState): number => state.count)
+  const dispatch = useDispatch()
+
+  const onIncrement = (): void => {
+    dispatch(increment())
+  }
+
+  const onDecrement = (): void => {
+    dispatch(decrement())
+  }
+
+  const onReset = (): void => {
+    dispatch(reset())
+  }
+
+  return (
+    <div>
+      <style jsx>{`
+        div {
+          padding: 0 0 20px 0;
+        }
+      `}</style>
+      <h1>
+        Count: <span>{count}</span>
+      </h1>
+      <button onClick={onIncrement}>+1</button>
+      <button onClick={onDecrement}>-1</button>
+      <button onClick={onReset}>Reset</button>
+    </div>
+  )
+}
+
+export default Counter

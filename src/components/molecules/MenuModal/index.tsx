@@ -27,11 +27,11 @@ const MenuModal = ({ isOpen, toggle }: MenuModal_interface) => {
       fullHeight
       position="right"
     >
-      <MDBModalHeader toggle={() => toggle()}>
+      <MDBModalHeader className="text-center" toggle={() => toggle()}>
         <Image
-          src={require('public/images/logon-2.png')}
-          width={256}
-          height={87}
+          src={require('public/images/logo_branch (2).png')}
+          width={170}
+          height={60}
         />
       </MDBModalHeader>
       <MDBModalBody>

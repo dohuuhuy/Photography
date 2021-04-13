@@ -68,17 +68,19 @@ const DoubleNavigationPage = ({ children }: Props) => {
     <>
       <div className="fixed-sn light-blue-skin">
         {/* sidebar bên trái */}
-        <MDBSideNav
-          logo={require('public/images/logo_branch (2).png')}
-          triggerOpening={!!toggleStateA}
-          breakWidth={breakWidth}
-          bg="https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg"
-          fixed
-        >
-          {/* menu trái */}
-          <Menu />
-          {/* menu trái */}
-        </MDBSideNav>
+        <Link href="/admin">
+          <MDBSideNav
+            logo={require('public/images/logo_branch (2).png')}
+            triggerOpening={!!toggleStateA}
+            breakWidth={breakWidth}
+            bg="https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg"
+            fixed
+          >
+            {/* menu trái */}
+            <Menu />
+            {/* menu trái */}
+          </MDBSideNav>
+        </Link>
         {/* sidebar bên trái */}
 
         {/* menu ngang  */}
@@ -114,10 +116,10 @@ export const Menu = () => {
         id="submit-blog-cat"
         icon="chevron-right"
       >
-        <Link href={'admin/banners'}>
+        <Link href={'/admin/banners'}>
           <a>Danh Sách Banners</a>
         </Link>
-        <Link href={'admin/banners'}>
+        <Link href={'/admin/banners'}>
           <a>Cập Nhật Banners</a>
         </Link>
       </MDBSideNavCat>
@@ -192,10 +194,10 @@ export const NavBar_Right = ({ style }: any) => {
             <div className="d-none d-md-inline">Dropdown</div>
           </MDBDropdownToggle>
           <MDBDropdownMenu right>
-            <a href="#!">Action</a>
-            <a href="#!">Another Action</a>
-            <a href="#!">Something else here</a>
-            <a href="#!">Something else here</a>
+            <a href="/#!">Action</a>
+            <a href="/#!">Another Action</a>
+            <a href="/#!">Something else here</a>
+            <a href="/#!">Something else here</a>
           </MDBDropdownMenu>
         </MDBDropdown>
       </MDBNavItem>
