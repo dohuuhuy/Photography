@@ -1,10 +1,10 @@
 {
   "name": "photo",
   "scripts": {
-    "dev:production": "SET NODE_ENV=production next",
-    "dev": "next -p 80",
+    "dev:production": "next",
+    "dev": "next",
     "build": "next build",
-    "start": "EXPORT NODE_ENV=production next start -p 3000",
+    "start": "next start",
     "export": "next export",
     "prettier": "prettier  --write **/*.{ts,tsx,js}",
     "lint:ts": "npm run prettier && tslint -c tslint.json -t stylish --fix {pages,src,server}/**/*.{ts,tsx}",

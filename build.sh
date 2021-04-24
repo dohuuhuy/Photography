@@ -1,3 +1,3 @@
 git pull
-yarn export
+yarn start
 pm2 restart photo
