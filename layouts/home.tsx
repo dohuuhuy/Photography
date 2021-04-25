@@ -1,6 +1,6 @@
 import { MDBContainer } from 'mdbreact'
-import React, { ReactNode } from 'react'
 import dynamic from 'next/dynamic'
+import React, { ReactNode } from 'react'
 const Carousel = dynamic(() => import('@components/organisms/CarouselPage'))
 const Header = dynamic(() => import('@components/organisms/Header'))
 

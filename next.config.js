@@ -19,6 +19,11 @@ const cssOptions = {
 }
 
 const nextConfig = {
+  exportPathMap: function () {
+    return {
+      '/': { page: '/' },
+    }
+  },
   images: {
     domains: ['mdbootstrap.com'],
   },
