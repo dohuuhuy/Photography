@@ -2,7 +2,7 @@ import { AppState, Action, actionTypes } from './../interfaces'
 
 import { HYDRATE } from 'next-redux-wrapper'
 
-export const exampleInitialState: AppState = {
+export const InitialState: AppState = {
   count: 0,
   error: null,
   lastUpdate: 0,
@@ -11,7 +11,7 @@ export const exampleInitialState: AppState = {
 }
 
 const reducer = (
-  state = exampleInitialState,
+  state = InitialState,
   action: Action | { type: typeof HYDRATE; payload: AppState },
 ): AppState => {
   switch (action.type) {
@@ -39,7 +39,7 @@ const reducer = (
     case actionTypes.RESET:
       return {
         ...state,
-        ...{ count: exampleInitialState.count },
+        ...{ count: InitialState.count },
       }
 
     case actionTypes.LOAD_DATA_SUCCESS:

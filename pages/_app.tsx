@@ -1,4 +1,3 @@
-import { wrapper } from '@store/index'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'bootstrap-css-only/css/bootstrap.min.css'
 import 'mdbreact/dist/css/mdb.css'
@@ -13,4 +12,4 @@ const MyApp = ({ Component, pageProps }: any) => {
   )
 }
 
-export default wrapper.withRedux(MyApp)
+export default MyApp

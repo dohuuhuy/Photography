@@ -19,6 +19,9 @@ const cssOptions = {
 }
 
 const nextConfig = {
+  images: {
+    domains: ['mdbootstrap.com'],
+  },
   ...cssOptions,
   env: {
     API_BE: 'http://localhost:3006',
@@ -29,5 +32,14 @@ const nextConfig = {
     return config
   },
 }
-const plugins = [withImages]
+const plugins = [
+  [
+    withImages,
+    {
+      images: {
+        domains: ['mdbootstrap.com'],
+      },
+    },
+  ],
+]
 module.exports = withPugins(plugins, nextConfig)

@@ -11,6 +11,7 @@ import Link from 'next/link'
 import React from 'react'
 import styles from './style.module.scss'
 import Typewriter from 'typewriter-effect'
+import Image from 'next/image'
 
 interface Props {
   list_image?: any
@@ -27,8 +28,14 @@ const CarouselImage = ({ list_image }: Props) => {
             <MDBCarouselItem itemId={index + 1} key={index}>
               <MDBRow>
                 <MDBCol md="8" className="p-0">
-                  <MDBView zoom={true}>
-                    <img className="d-block w-100 vh-100" src={image} />
+                  <MDBView
+                    rounded
+                    hover
+                    waves
+                    zoom
+                    className="d-block w-100 vh-100"
+                  >
+                    <Image src={image} layout="fill" />
                     <MDBMask overlay="black-light" />
                   </MDBView>
                 </MDBCol>
