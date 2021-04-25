@@ -63,10 +63,10 @@ const CarouselImage = ({ list_image }: Props) => {
                         <p>{text}</p>
                         <div className={button ? '' : 'd-none'}>
                           <Link href={link_button}>
-                            <p className={styles.btn_view}>
+                            <span className={styles.btn_view}>
                               {text_button}
                               <MDBIcon icon="arrow-right" />
-                            </p>
+                            </span>
                           </Link>
                         </div>
                       </div>
