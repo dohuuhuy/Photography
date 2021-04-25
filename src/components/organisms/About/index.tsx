@@ -17,7 +17,12 @@ const About = () => {
   return (
     <MDBRow className="vh-100">
       <MDBCol md="5">
-        <Image src="/images/about.png" layout="fill" objectFit="contain" />
+        <Image
+          alt="about"
+          src="/images/about.png"
+          layout="fill"
+          objectFit="contain"
+        />
       </MDBCol>
       <MDBCol md="7">
         <MDBContainer style={{ marginTop: '6em' }}>

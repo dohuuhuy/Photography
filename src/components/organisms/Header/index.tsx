@@ -1,9 +1,11 @@
-import MenuModal from '@components/molecules/MenuModal'
 import { MDBContainer, MDBIcon, MDBNavbar, MDBNavbarBrand } from 'mdbreact'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from './style.module.scss'
+
+const MenuModal = dynamic(() => import('@components/molecules/MenuModal'))
 
 const hamburgerMenuPage = () => {
   const [isOpen, setisOpen] = useState(false)
@@ -36,6 +38,7 @@ const hamburgerMenuPage = () => {
           <MDBNavbarBrand className={styles.logo_branch}>
             <Link href="/">
               <Image
+                alt="logo_branch"
                 src={require('public/images/logo_branch (2).png')}
                 width={128}
                 height={48}

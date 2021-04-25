@@ -10,6 +10,7 @@ const Contact = () => {
     <MDBRow>
       <MDBCol lg="5" className="lg-0 mb-4">
         <Image
+          alt="home"
           src={require('public/images/home-main.svg')}
           objectFit="fill"
           layout="fill"

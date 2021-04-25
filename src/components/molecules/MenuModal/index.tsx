@@ -32,6 +32,7 @@ const MenuModal = ({ isOpen, toggle }: MenuModal_interface) => {
           src={require('public/images/logo_branch (2).png')}
           width={170}
           height={60}
+          alt="logo_branch"
         />
       </MDBModalHeader>
       <MDBModalBody>

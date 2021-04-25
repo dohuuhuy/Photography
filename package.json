@@ -28,6 +28,7 @@
     "next-compose-plugins": "2.2.1",
     "next-images": "1.6.2",
     "next-redux-wrapper": "6.0.2",
+    "next-seo": "4.24.0",
     "node-sass": "5.0.0",
     "node_env": "0.0.3",
     "postcss-preset-env": "6.7.0",

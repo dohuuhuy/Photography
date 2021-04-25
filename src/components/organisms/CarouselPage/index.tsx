@@ -1,7 +1,11 @@
 import { MDBCarousel, MDBContainer } from 'mdbreact'
 import React from 'react'
 import { arr_Image } from '../../../utils/sample-data'
-import CarouselImage from '../../molecules/CarouselImage'
+import dynamic from 'next/dynamic'
+const CarouselImage = dynamic(
+  () => import('@components/molecules/CarouselImage'),
+)
+
 const Carousel = () => {
   return (
     <MDBContainer fluid className="w-100 vh-100 p-0">

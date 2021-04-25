@@ -35,7 +35,7 @@ const CarouselImage = ({ list_image }: Props) => {
                     zoom
                     className="d-block w-100 vh-100"
                   >
-                    <Image src={image} layout="fill" />
+                    <Image src={image} layout="fill" alt={image} />
                     <MDBMask overlay="black-light" />
                   </MDBView>
                 </MDBCol>
@@ -63,10 +63,10 @@ const CarouselImage = ({ list_image }: Props) => {
                         <p>{text}</p>
                         <div className={button ? '' : 'd-none'}>
                           <Link href={link_button}>
-                            <a className={styles.btn_view}>
+                            <p className={styles.btn_view}>
                               {text_button}
                               <MDBIcon icon="arrow-right" />
-                            </a>
+                            </p>
                           </Link>
                         </div>
                       </div>
