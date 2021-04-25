@@ -11,6 +11,7 @@ import {
   MDBModalFooter,
   MDBCardHeader,
 } from 'mdbreact'
+import Link from 'next/link'
 
 const SignUp = () => {
   return (
@@ -92,9 +93,7 @@ const SignUp = () => {
             <MDBModalFooter className="mx-5 pt-3 mb-1">
               <p className="font-small grey-text d-flex justify-content-end">
                 Not a member?
-                <a href="#!" className="blue-text ml-1">
-                  Sign Up
-                </a>
+                <Link href="#!">Sign Up</Link>
               </p>
             </MDBModalFooter>
           </MDBCard>

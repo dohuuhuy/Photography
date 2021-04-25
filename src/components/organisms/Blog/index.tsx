@@ -38,15 +38,11 @@ const Blog = () => {
                   <MDBCardImage cascade src={link_img} top alt="sample photo" />
                   <MDBCardBody cascade className="text-center">
                     <Link href={link_product}>
-                      <a className="text-muted">
-                        <h5>{tag}</h5>
-                      </a>
+                      <h5 className="text-muted">{tag}</h5>
                     </Link>
                     <MDBCardTitle>
                       <strong>
-                        <Link href={link_product}>
-                          <a>{title}</a>
-                        </Link>
+                        <Link href={link_product}>{title}</Link>
                       </strong>
                     </MDBCardTitle>
                     <MDBCardText>{description}</MDBCardText>

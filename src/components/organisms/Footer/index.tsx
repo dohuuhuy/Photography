@@ -1,6 +1,7 @@
 // import { MDBCol, MDBRow } from 'mdbreact'
 import { Social } from '@components/molecules/Social'
 import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from 'mdbreact'
+import Link from 'next/link'
 import React from 'react'
 import styles from './style.module.scss'
 
@@ -20,7 +21,7 @@ const Footer = () => {
           <MDBCol md="4" className="col-pb-sm text-center">
             <h5>Liên hệ</h5>
             <p>
-              <a href="#">dohuuhuy2@gmail.com</a>
+              <Link href="#">dohuuhuy2@gmail.com</Link>
             </p>
           </MDBCol>
           <MDBCol md="4" className="col-pb-sm text-center">

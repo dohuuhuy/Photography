@@ -1,4 +1,5 @@
 import { MDBRow, MDBCol, MDBCard, MDBIcon } from 'mdbreact'
+import Link from 'next/link'
 import React from 'react'
 import { list_product_menu_interface } from 'src/interfaces'
 import { list_product_menu } from 'src/utils/sample-data'
@@ -21,11 +22,11 @@ export const ListProducMenu = () => {
                 <div className="view zoom">
                   <img src={link_img} className="img-fluid" alt="" />
                   <div className="stripe dark">
-                    <a href={link_product}>
+                    <Link href={link_product}>
                       <p>
                         {title_product} <MDBIcon icon="angle-right" />
                       </p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </MDBCard>

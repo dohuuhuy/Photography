@@ -54,9 +54,7 @@ const MenuModal = ({ isOpen, toggle }: MenuModal_interface) => {
             <MDBCol>
               <section className="text-center my-5">
                 <h2 className="h1-responsive font-weight-bold text-center my-5">
-                  <Link href="/contact">
-                    <a>Contact</a>
-                  </Link>
+                  <Link href="/contact">Contact</Link>
                 </h2>
                 <p className="grey-text text-center w-responsive mx-auto mb-5">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.

@@ -33,20 +33,17 @@ const hamburgerMenuPage = () => {
         scrolling
       >
         <MDBContainer fluid={fluid}>
-          <MDBNavbarBrand>
+          <MDBNavbarBrand className={styles.logo_branch}>
             <Link href="/">
-              <a className={styles.logo_branch}>
-                <Image
-                  src={require('public/images/logo_branch (2).png')}
-                  width={128}
-                  height={48}
-                />
-              </a>
+              <Image
+                src={require('public/images/logo_branch (2).png')}
+                width={128}
+                height={48}
+              />
             </Link>
           </MDBNavbarBrand>
-          <a onClick={() => toggle()}>
-            <MDBIcon size="2x" icon={'home'} />
-          </a>
+
+          <MDBIcon size="2x" icon={'home'} onClick={() => toggle()} />
         </MDBContainer>
         {/* phần hiển thị danh sách menu */}
         <MenuModal isOpen={isOpen} toggle={() => toggle()} />

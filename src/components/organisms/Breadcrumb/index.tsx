@@ -11,7 +11,7 @@ const BreadcrumbPage = () => {
       <MDBBreadcrumb>
         <MDBBreadcrumbItem>
           <Link href="/" shallow>
-            <a>Home</a>
+            Home
           </Link>
         </MDBBreadcrumbItem>
         {breadcrumb_cate ? (
@@ -33,7 +33,7 @@ const BreadcrumbPage = () => {
               }
               as={`/${breadcrumb_cate[1]}`}
             >
-              <a>{breadcrumb_cate[0]}</a>
+              {breadcrumb_cate[0]}
             </Link>
           </MDBBreadcrumbItem>
         ) : null}
@@ -53,7 +53,7 @@ const BreadcrumbPage = () => {
                 }}
                 as={`/${breadcrumb_cate[1]}/${breadcrumb_subCate[1]}`}
               >
-                <a>{breadcrumb_subCate[0]}</a>
+                {breadcrumb_subCate[0]}
               </Link>
             </MDBBreadcrumbItem>
           ) : null

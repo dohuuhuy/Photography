@@ -116,12 +116,8 @@ export const Menu = () => {
         id="submit-blog-cat"
         icon="chevron-right"
       >
-        <Link href={'/admin/banners'}>
-          <a>Danh Sách Banners</a>
-        </Link>
-        <Link href={'/admin/banners'}>
-          <a>Cập Nhật Banners</a>
-        </Link>
+        <Link href={'/admin/banners'}>Danh Sách Banners</Link>
+        <Link href={'/admin/banners'}>Cập Nhật Banners</Link>
       </MDBSideNavCat>
       <MDBSideNavCat
         iconRegular
@@ -129,16 +125,13 @@ export const Menu = () => {
         id="instruction-cat"
         icon="hand-pointer"
       >
-        <a>For bloggers</a>
-        <a>For authors</a>
+        For bloggers For authors
       </MDBSideNavCat>
       <MDBSideNavCat name="About" id="about-cat" icon="eye">
-        <a>Instruction</a>
-        <a>Monthly meetings</a>
+        Instruction Monthly meetings
       </MDBSideNavCat>
       <MDBSideNavCat name="Contact me" id="contact-me-cat" icon="envelope">
-        <a>FAQ</a>
-        <a>Write a message</a>
+        FAQ Write a message
       </MDBSideNavCat>
     </MDBSideNavNav>
   )
@@ -171,22 +164,22 @@ export const NavBar_Right = ({ style }: any) => {
   return (
     <MDBNavbarNav right style={style}>
       <MDBNavItem active>
-        <a>
+        <Link href="/#!">
           <MDBIcon icon="envelope" className="d-inline-inline" />{' '}
           <div className="d-none d-md-inline">Contact</div>
-        </a>
+        </Link>
       </MDBNavItem>
       <MDBNavItem>
-        <a>
+        <Link href="/#!">
           <MDBIcon far icon="comments" className="d-inline-inline" />{' '}
           <div className="d-none d-md-inline">Support</div>
-        </a>
+        </Link>
       </MDBNavItem>
       <MDBNavItem>
-        <a>
+        <Link href="/#!">
           <MDBIcon icon="user" className="d-inline-inline" />{' '}
           <div className="d-none d-md-inline">Account</div>
-        </a>
+        </Link>
       </MDBNavItem>
       <MDBNavItem>
         <MDBDropdown>
@@ -194,10 +187,10 @@ export const NavBar_Right = ({ style }: any) => {
             <div className="d-none d-md-inline">Dropdown</div>
           </MDBDropdownToggle>
           <MDBDropdownMenu right>
-            <a href="/#!">Action</a>
-            <a href="/#!">Another Action</a>
-            <a href="/#!">Something else here</a>
-            <a href="/#!">Something else here</a>
+            <Link href="/#!">Action</Link>
+            <Link href="/#!">Another Action</Link>
+            <Link href="/#!">Something else here</Link>
+            <Link href="/#!">Something else here</Link>
           </MDBDropdownMenu>
         </MDBDropdown>
       </MDBNavItem>

@@ -109,9 +109,7 @@ const hamburgerMenuPage = () => {
                   <MDBCol>
                     <section className="text-center my-5">
                       <h2 className="h1-responsive font-weight-bold text-center my-5">
-                        <Link href="/contact">
-                          <a>Contact</a>
-                        </Link>
+                        <Link href="/contact">Contact</Link>
                       </h2>
                       <p className="grey-text text-center w-responsive mx-auto mb-5">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -129,11 +127,11 @@ const hamburgerMenuPage = () => {
                                 alt=""
                               />
                               <div className="stripe dark">
-                                <a href="#!">
+                                <Link href="#!">
                                   <p>
                                     Red trousers <MDBIcon icon="angle-right" />
                                   </p>
-                                </a>
+                                </Link>
                               </div>
                             </div>
                           </MDBCard>
@@ -147,11 +145,11 @@ const hamburgerMenuPage = () => {
                                 alt=""
                               />
                               <div className="stripe dark">
-                                <a href="#!">
+                                <Link href="#!">
                                   <p>
                                     Sweatshirt <MDBIcon icon="angle-right" />
                                   </p>
-                                </a>
+                                </Link>
                               </div>
                             </div>
                           </MDBCard>
@@ -165,11 +163,11 @@ const hamburgerMenuPage = () => {
                                 alt=""
                               />
                               <div className="stripe dark">
-                                <a href="#!">
+                                <Link href="#!">
                                   <p>
                                     Accessories <MDBIcon icon="angle-right" />
                                   </p>
-                                </a>
+                                </Link>
                               </div>
                             </div>
                           </MDBCard>
@@ -183,11 +181,11 @@ const hamburgerMenuPage = () => {
                                 alt=""
                               />
                               <div className="stripe dark">
-                                <a href="#!">
+                                <Link href="#!">
                                   <p>
                                     Sweatshirt <MDBIcon icon="angle-right" />
                                   </p>
-                                </a>
+                                </Link>
                               </div>
                             </div>
                           </MDBCard>

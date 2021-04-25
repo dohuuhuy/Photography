@@ -10,6 +10,7 @@ import {
   MDBIcon,
   MDBRow,
 } from 'mdbreact'
+import Link from 'next/link'
 import React from 'react'
 
 const CardExample = () => {
@@ -67,21 +68,21 @@ const CardExample = () => {
             alt="MDBCard image cap"
           />
           <MDBCardBody className="elegant-color white-text rounded-bottom">
-            <a href="#!" className="activator waves-effect waves-light mr-4">
+            <Link href="#!">
               <MDBIcon icon="share-alt" className="white-text" />
-            </a>
+            </Link>
             <MDBCardTitle>MDBCard Title</MDBCardTitle>
             <hr className="hr-light" />
             <MDBCardText className="white-text">
               Some quick example text to build on the card title and make up the
               bulk of the card&apos;s content.
             </MDBCardText>
-            <a href="#!" className="black-text d-flex justify-content-end">
+            <Link href="#!">
               <h5 className="white-text">
                 Read more
                 <MDBIcon icon="angle-double-right" className="ml-2" />
               </h5>
-            </a>
+            </Link>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

@@ -12,10 +12,8 @@ export const ListMenu = () => (
       <ul className={cx(styles.menu, 'nav flex-column')}>
         {list_menu.map(({ title, slug }: menu_interface, i: number) => {
           return (
-            <li className="nav-item" key={i}>
-              <Link href={slug}>
-                <a className="nav-link">{title}</a>
-              </Link>
+            <li className="nav-item nav-link" key={i}>
+              <Link href={slug}>{title}</Link>
             </li>
           )
         })}
