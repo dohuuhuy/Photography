@@ -52,7 +52,7 @@ const CarouselImage = ({ list_image }: Props) => {
                             options={{
                               loop: true,
                             }}
-                            onInit={(typewriter) => {
+                            onInit={(typewriter: any) => {
                               typewriter
                                 .typeString(caption)
                                 .pauseFor(500)
