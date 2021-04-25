@@ -1,7 +1,6 @@
 {
   "name": "photo",
   "scripts": {
-    "dev:production": "next",
     "dev": "next",
     "build": "next build",
     "start": "next start",
