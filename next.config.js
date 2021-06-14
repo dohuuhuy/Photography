@@ -19,14 +19,6 @@ const cssOptions = {
 }
 
 const nextConfig = {
-  exportPathMap: function () {
-    return {
-      '/': { page: '/' },
-    }
-  },
-  images: {
-    domains: ['mdbootstrap.com'],
-  },
   ...cssOptions,
   env: {
     API_BE: 'http://localhost:3006',
@@ -37,14 +29,5 @@ const nextConfig = {
     return config
   },
 }
-const plugins = [
-  [
-    withImages,
-    {
-      images: {
-        domains: ['mdbootstrap.com'],
-      },
-    },
-  ],
-]
+const plugins = [withImages]
 module.exports = withPugins(plugins, nextConfig)
