@@ -3,7 +3,7 @@ const withImages = require('next-images')
 
 const nextConfig = {
   images: {
-    domains: ['mdbootstrap.com'],
+    domains: ['mdbootstrap.com', 'mdbcdn.b-cdn.net'],
   },
 }
 
