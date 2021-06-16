@@ -1,6 +1,9 @@
-import Blog from '@components/organisms/Blog'
-import defaultLayout from 'layouts/default'
+import dynamic from 'next/dynamic'
 import React from 'react'
+
+const defaultLayout = dynamic(() => import('layouts/default'))
+const Blog = dynamic(() => import('@components/organisms/Blog'))
+
 const BlogPage = () => {
   return <Blog />
 }

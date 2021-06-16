@@ -1,5 +1,8 @@
-import SignUp from '@components/organisms/SignUp'
-import LoginLayout from 'layouts/login'
+import dynamic from 'next/dynamic'
+import React from 'react'
+
+const LoginLayout = dynamic(() => import('layouts/login'))
+const SignUp = dynamic(() => import('@components/organisms/SignUp'))
 
 const RegisterPage = () => {
   return <SignUp />

@@ -1,6 +1,8 @@
-import About from '@components/organisms/About'
-import AboutLayout from 'layouts/about'
+import dynamic from 'next/dynamic'
 import React from 'react'
+
+const AboutLayout = dynamic(() => import('layouts/about'))
+const About = dynamic(() => import('@components/organisms/About'))
 
 const AboutPage = () => {
   return <About />
