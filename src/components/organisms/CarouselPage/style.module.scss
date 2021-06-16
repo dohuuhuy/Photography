@@ -1,11 +1,11 @@
-@import '@common/scss/custom-variables';
-.head_banner{
+@import '/public/scss/custom-variables';
+.head_banner {
   font-family: $font2;
-  font-weight:700 !important;
+  font-weight: 700 !important;
 }
-.head_description{
-  color:#000 !important;
-  font-weight:400 !important;
+.head_description {
+  color: #000 !important;
+  font-weight: 400 !important;
 }
 .thumb {
   ol {

@@ -3,7 +3,7 @@ import AdminLayout from './admin'
 import LoginLayout from './login'
 import AboutLayout from './about'
 import HomeLayout from './home'
-
+import React from 'react'
 const layouts: any = {
   default: DefaultLayout,
   admin: AdminLayout,
@@ -19,7 +19,11 @@ const LayoutWrapper = (props: any) => {
     return <Layout {...props}>{props.children}</Layout>
   }
 
-  return <DefaultLayout {...props}>{props.children}</DefaultLayout>
+  return (
+    <>
+      <DefaultLayout {...props}>{props.children}</DefaultLayout>
+    </>
+  )
 }
 
 export default LayoutWrapper

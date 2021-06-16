@@ -1,3 +1,4 @@
+import cx from 'classnames'
 import {
   MDBCarouselInner,
   MDBCarouselItem,
@@ -7,18 +8,18 @@ import {
   MDBRow,
   MDBView,
 } from 'mdbreact'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import styles from './style.module.scss'
 import Typewriter from 'typewriter-effect'
-import Image from 'next/image'
+import styles from './style.module.scss'
 
 interface Props {
   list_image?: any
 }
 const CarouselImage = ({ list_image }: Props) => {
   return (
-    <MDBCarouselInner>
+    <MDBCarouselInner className={styles.CarouselImage}>
       {list_image.map(
         (
           { image, caption, text, tag, button, text_button, link_button }: any,
@@ -27,27 +28,26 @@ const CarouselImage = ({ list_image }: Props) => {
           return (
             <MDBCarouselItem itemId={index + 1} key={index}>
               <MDBRow>
-                <MDBCol md="8" className="p-0">
-                  <MDBView
-                    rounded
-                    hover
-                    waves
-                    zoom
-                    className="d-block w-100 vh-100"
-                  >
-                    <Image src={image} layout="fill" alt={image} />
+                <MDBCol md="8" className={cx(styles.left)}>
+                  <MDBView className={cx(styles.view, 'w-100')}>
+                    <Image
+                      src={image}
+                      layout="fill"
+                      objectFit="fill"
+                      alt={image}
+                    />
                     <MDBMask overlay="black-light" />
                   </MDBView>
                 </MDBCol>
-                <MDBCol md="4" className="p-0">
-                  <div className="display-tc js-fullheight">
+                <MDBCol md="4" className={cx(styles.right)}>
+                  <section>
                     <h2 className={styles.number}>
                       0{index + 1}/0{list_image.length}
                     </h2>
                     <div className={styles.text_inner}>
                       <div className={styles.desc}>
                         <span className={styles.tag}>{tag}</span>
-                        <h2>
+                        <h2 className={styles.typewriter}>
                           <Typewriter
                             options={{
                               loop: true,
@@ -71,7 +71,7 @@ const CarouselImage = ({ list_image }: Props) => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </section>
                 </MDBCol>
               </MDBRow>
             </MDBCarouselItem>

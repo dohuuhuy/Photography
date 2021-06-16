@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import React from 'react'
 
-const SideNavPage = dynamic(import('@components/organisms/SideNav'), {
+const SideNavPage = dynamic(() => import('@components/organisms/SideNav'), {
   ssr: false,
 })
 

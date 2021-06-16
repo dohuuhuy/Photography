@@ -8,7 +8,7 @@ const CarouselImage = dynamic(
 
 const Carousel = () => {
   return (
-    <MDBContainer fluid className="p-0" style={{ minHeight: '900px' }}>
+    <MDBContainer fluid style={{ minHeight: '900px', marginTop: '6rem' }}>
       <MDBCarousel
         interval={2500}
         activeItem={1}

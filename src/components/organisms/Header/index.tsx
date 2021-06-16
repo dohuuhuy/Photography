@@ -1,7 +1,7 @@
 import { MDBContainer, MDBIcon, MDBNavbar, MDBNavbarBrand } from 'mdbreact'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import Link from 'next/link'
+import router from 'next/router'
 import React, { useState } from 'react'
 import styles from './style.module.scss'
 
@@ -35,17 +35,18 @@ const hamburgerMenuPage = () => {
         scrolling
       >
         <MDBContainer fluid={fluid}>
-          <MDBNavbarBrand className={styles.logo_branch}>
-            <Link href="/">
-              <Image
-                alt="logo_branch"
-                src={require('public/images/logo_branch (2).png')}
-                width={128}
-                height={48}
-              />
-            </Link>
+          <MDBNavbarBrand
+            className={styles.logo_branch}
+            onClick={() => router.push('/')}
+          >
+            <Image
+              alt="logo_branch"
+              src={'/images/logo_branch (2).png'}
+              width={128}
+              height={48}
+              objectFit="fill"
+            />
           </MDBNavbarBrand>
-
           <MDBIcon size="2x" icon={'home'} onClick={() => toggle()} />
         </MDBContainer>
         {/* phần hiển thị danh sách menu */}
