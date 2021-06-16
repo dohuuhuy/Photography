@@ -19,7 +19,7 @@ const About = () => {
       <MDBCol md="5">
         <Image
           alt="about"
-          src="/images/about.png"
+          src={require('public/images/about.png')}
           layout="fill"
           objectFit="contain"
         />
